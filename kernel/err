@@ -1,71 +1,3 @@
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_HANS_FREEZE
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_STORAGE_TOOL
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MMC_DRIVER
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_UFS_DRIVER
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_UFS_SHOW_LATENCY
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_AOD
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_DC
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_ENABLE_MODEM_DB
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_ENGINEERTOOLS
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_FACERECOGNITION
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_FASTBOOT_UNLOCK_VERIFY
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_FG_IO_OPT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_FINGERPRINT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_HEALTHINFO
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_TASK_CPUSTATS
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MIPICLKCHANGE
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MULTI_FREEAREA
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MULTI_KSWAPD
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_NFC_CONSOFT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_ONSCREENFINGERPRINT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_OSC
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_PHOENIX
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_AGINGTEST
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_PROCESS_RECLAIM
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_RESET_ROLLBACK_INDEX
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SELINUX_CONTROL_LOG
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SENSOR
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SENSOR_ALGORITHM
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SENSOR_SMEM
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SENSOR_WISELIGHT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_IOMONITOR
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SPEAKER_MUTE
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MM_FEEDBACK
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_TP_BSPFWUPDATE
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_TP_BASIC
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_CHG_BASIC
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_UIFIRST
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_VIRTUAL_RESERVE_MEMORY
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MEMLEAK_DETECT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_WIFI_LIMMITBGSPEED
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_WIFI_MTUDETECT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_WIFI_RUSUPGRADE
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_WIFI_SLA
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_DATA_EVAL
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_ZRAM_OPT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_EXFAT_SUPPORT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SDCARDFS_SUPPORT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_BUG_COMPATIBILITY
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_BUG_STABILITY
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_BUG_DEBUG
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_ARCH_INJECT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_ARCH_EXTENDS
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_LOWMEM_DBG
-OplusKernelEnvConfig.mk:108: myfeature is VENDOR_EDIT
-OplusKernelEnvConfig.mk:108: myfeature is COLOROS_EDIT
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_CAMERA_COMMON
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_THEIA
-OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_APP_MONITOR
-drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
-drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
-drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
-drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
-drivers/tee/Makefile:3: "tee config----- CONFIG_TEE: y"
-drivers/tee/Makefile:4: "tee config----- CONFIG_TRUSTONIC_TEE_SUPPORT: y"
-drivers/tee/Makefile:5: "tee config----- CONFIG_TRUSTONIC_TEE_VERSION: "500""
-drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
-drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
 drivers/soc/oppo/oppo_criticallog/criticallog_class.c:23:31: fatal error: criticallog_class.h: No such file or directory
  #include <criticallog_class.h>
                                ^
@@ -74,84 +6,37 @@ make[4]: *** [scripts/Makefile.build:334: drivers/soc/oppo/oppo_criticallog/crit
 make[3]: *** [scripts/Makefile.build:637: drivers/soc/oppo/oppo_criticallog] Error 2
 make[2]: *** [scripts/Makefile.build:637: drivers/soc/oppo] Error 2
 make[2]: *** Waiting for unfinished jobs....
-In file included from drivers/power/oplus/oplus_charger.h:41:0,
-                 from drivers/power/oplus/oplus_gauge.c:7:
-drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
+drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
+drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
+In file included from drivers/tee/gud/500/MobiCoreDriver/mcp.c:37:0:
+drivers/tee/gud/500/MobiCoreDriver/mci/mcimcp.h:19:30: fatal error: mci/mcloadformat.h: No such file or directory
+ #include "mci/mcloadformat.h"
+                              ^
 compilation terminated.
-make[3]: *** [scripts/Makefile.build:334: drivers/power/oplus/oplus_gauge.o] Error 1
-make[3]: *** Waiting for unfinished jobs....
+make[5]: *** [scripts/Makefile.build:333: drivers/tee/gud/500/MobiCoreDriver/mcp.o] Error 1
+make[5]: *** Waiting for unfinished jobs....
 In file included from drivers/tee/gud/500/MobiCoreDriver/iwp.c:38:0:
 drivers/tee/gud/500/MobiCoreDriver/mci/mcimcp.h:19:30: fatal error: mci/mcloadformat.h: No such file or directory
  #include "mci/mcloadformat.h"
                               ^
 compilation terminated.
 make[5]: *** [scripts/Makefile.build:333: drivers/tee/gud/500/MobiCoreDriver/iwp.o] Error 1
-make[5]: *** Waiting for unfinished jobs....
-In file included from drivers/power/oplus/oplus_charger.h:41:0,
-                 from drivers/power/oplus/oplus_adapter.c:10:
-drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
+In file included from drivers/tee/gud/500/MobiCoreDriver/mmu.c:43:0:
+drivers/tee/gud/500/MobiCoreDriver/mci/mcimcp.h:19:30: fatal error: mci/mcloadformat.h: No such file or directory
+ #include "mci/mcloadformat.h"
+                              ^
 compilation terminated.
-In file included from drivers/power/oplus/vooc_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/vooc_ic/oplus_vooc_fw.h:49,
-                 from drivers/power/oplus/vooc_ic/oplus_stm8s.c:52:
-drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
+make[5]: *** [scripts/Makefile.build:333: drivers/tee/gud/500/MobiCoreDriver/mmu.o] Error 1
+In file included from drivers/staging/android/mtk_ion/ion.c:45:0:
+drivers/staging/android/mtk_ion/mtk/ion_drv_priv.h:9:22: fatal error: ion_priv.h: No such file or directory
+ #include "ion_priv.h"
+                      ^
 compilation terminated.
-In file included from drivers/power/oplus/adapter_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/adapter_ic/oplus_stm.c:20:
-drivers/power/oplus/adapter_ic/../charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_stm8s.o] Error 1
-make[4]: *** Waiting for unfinished jobs....
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/adapter_ic/oplus_stm.o] Error 1
-make[3]: *** [scripts/Makefile.build:334: drivers/power/oplus/oplus_adapter.o] Error 1
-In file included from drivers/power/oplus/vooc_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/vooc_ic/oplus_vooc_fw.h:49,
-                 from drivers/power/oplus/vooc_ic/oplus_rt5125.c:49:
-drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-make[3]: *** [scripts/Makefile.build:637: drivers/power/oplus/adapter_ic] Error 2
-In file included from drivers/power/oplus/oplus_charger.h:41:0,
-                 from drivers/power/oplus/oplus_charger.c:60:
-drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_rt5125.o] Error 1
-make[3]: *** [scripts/Makefile.build:334: drivers/power/oplus/oplus_charger.o] Error 1
-In file included from drivers/power/oplus/vooc_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/vooc_ic/oplus_vooc_fw.h:49,
-                 from drivers/power/oplus/vooc_ic/oplus_n76e.c:51:
-drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-In file included from drivers/power/oplus/vooc_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/vooc_ic/oplus_vooc_fw.h:49,
-                 from drivers/power/oplus/vooc_ic/oplus_op10.c:53:
-drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-In file included from drivers/power/oplus/vooc_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/vooc_ic/oplus_vooc_fw.h:49,
-                 from drivers/power/oplus/vooc_ic/oplus_rk826.c:56:
-drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_n76e.o] Error 1
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_rk826.o] Error 1
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_op10.o] Error 1
+make[4]: *** [scripts/Makefile.build:333: drivers/staging/android/mtk_ion/ion.o] Error 1
+make[3]: *** [scripts/Makefile.build:637: drivers/staging/android/mtk_ion] Error 2
+make[2]: *** [scripts/Makefile.build:637: drivers/staging/android] Error 2
+make[1]: *** [scripts/Makefile.build:637: drivers/staging] Error 2
+make[1]: *** Waiting for unfinished jobs....
 In file included from drivers/soc/mediatek/mtk-pm-qos-trace.h:78:0,
                  from drivers/soc/mediatek/mtk-pm-qos.c:26:
 ./include/trace/define_trace.h:89:43: fatal error: ./mtk-pm-qos-trace.h: No such file or directory
@@ -160,13 +45,6 @@ In file included from drivers/soc/mediatek/mtk-pm-qos-trace.h:78:0,
 compilation terminated.
 make[3]: *** [scripts/Makefile.build:333: drivers/soc/mediatek/mtk-pm-qos.o] Error 1
 make[2]: *** [scripts/Makefile.build:637: drivers/soc/mediatek] Error 2
-In file included from drivers/power/oplus/gauge_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/gauge_ic/oplus_bq27541.c:52:
-drivers/power/oplus/gauge_ic/../charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/gauge_ic/oplus_bq27541.o] Error 1
 drivers/soc/oplus/system/oplus_project/mtk/oplus_project.c: In function 'project_read_func':
 drivers/soc/oplus/system/oplus_project/mtk/oplus_project.c:27:26: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
  #define Ptr2UINT32(p)    (uint32_t)(p)
@@ -174,92 +52,17 @@ drivers/soc/oplus/system/oplus_project/mtk/oplus_project.c:27:26: error: cast fr
 drivers/soc/oplus/system/oplus_project/mtk/oplus_project.c:598:12: note: in expansion of macro 'Ptr2UINT32'
      switch(Ptr2UINT32(p)) {
             ^~~~~~~~~~
-make[3]: *** [scripts/Makefile.build:637: drivers/power/oplus/gauge_ic] Error 2
-In file included from drivers/power/oplus/vooc_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/vooc_ic/oplus_vooc_fw.c:47:
-drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_vooc_fw.o] Error 1
-make[3]: *** [scripts/Makefile.build:637: drivers/power/oplus/vooc_ic] Error 2
-drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
-drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
-In file included from drivers/power/oplus/oplus_charger.h:41:0,
-                 from drivers/power/oplus/oplus_vooc.c:9:
-drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-make[3]: *** [scripts/Makefile.build:334: drivers/power/oplus/oplus_vooc.o] Error 1
-In file included from drivers/power/oplus/oplus_charger.h:41:0,
-                 from drivers/power/oplus/oplus_short.c:47:
-drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-In file included from drivers/staging/android/mtk_ion/ion_priv.h:21:0,
-                 from drivers/staging/android/mtk_ion/ion_page_pool.c:16:
-drivers/staging/android/mtk_ion/mtk/ion_drv.h:257:28: error: unknown type name 'ion_phys_addr_t'
- int ion_drv_create_FB_heap(ion_phys_addr_t fb_base, size_t fb_size);
-                            ^~~~~~~~~~~~~~~
-drivers/staging/android/mtk_ion/mtk/ion_drv.h:264:44: error: 'struct ion_platform_heap' declared inside parameter list will not be visible outside of this definition or declaration [-Werror]
- struct ion_heap *ion_mm_heap_create(struct ion_platform_heap *unused);
-                                            ^~~~~~~~~~~~~~~~~
-drivers/staging/android/mtk_ion/mtk/ion_drv.h:267:44: error: 'struct ion_platform_heap' declared inside parameter list will not be visible outside of this definition or declaration [-Werror]
- struct ion_heap *ion_fb_heap_create(struct ion_platform_heap *heap_data);
-                                            ^~~~~~~~~~~~~~~~~
-drivers/staging/android/mtk_ion/mtk/ion_drv.h:272:45: error: 'struct ion_platform_heap' declared inside parameter list will not be visible outside of this definition or declaration [-Werror]
- struct ion_heap *ion_sec_heap_create(struct ion_platform_heap *unused);
-                                             ^~~~~~~~~~~~~~~~~
-make[3]: *** [scripts/Makefile.build:334: drivers/power/oplus/oplus_short.o] Error 1
-cc1: all warnings being treated as errors
-cc1: all warnings being treated as errors
-make[4]: *** [scripts/Makefile.build:334: drivers/staging/android/mtk_ion/ion_page_pool.o] Error 1
-make[4]: *** Waiting for unfinished jobs....
-make[4]: *** [scripts/Makefile.build:333: drivers/soc/oplus/system/oplus_project/mtk/oplus_project.o] Error 1
-make[3]: *** [scripts/Makefile.build:637: drivers/soc/oplus/system/oplus_project] Error 2
-make[3]: *** Waiting for unfinished jobs....
-In file included from drivers/staging/android/mtk_ion/ion.c:45:0:
-drivers/staging/android/mtk_ion/mtk/ion_drv_priv.h:9:22: fatal error: ion_priv.h: No such file or directory
- #include "ion_priv.h"
-                      ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/staging/android/mtk_ion/ion.o] Error 1
-drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
-drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
-In file included from drivers/power/oplus/oplus_charger.h:41:0,
-                 from drivers/power/oplus/oplus_wireless.c:27:
-drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-make[3]: *** [scripts/Makefile.build:334: drivers/power/oplus/oplus_wireless.o] Error 1
-In file included from drivers/tee/gud/500/MobiCoreDriver/mcp.c:37:0:
-drivers/tee/gud/500/MobiCoreDriver/mci/mcimcp.h:19:30: fatal error: mci/mcloadformat.h: No such file or directory
- #include "mci/mcloadformat.h"
-                              ^
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:333: drivers/tee/gud/500/MobiCoreDriver/mcp.o] Error 1
-In file included from drivers/tee/gud/500/MobiCoreDriver/mmu.c:43:0:
-drivers/tee/gud/500/MobiCoreDriver/mci/mcimcp.h:19:30: fatal error: mci/mcloadformat.h: No such file or directory
- #include "mci/mcloadformat.h"
-                              ^
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:333: drivers/tee/gud/500/MobiCoreDriver/mmu.o] Error 1
 In file included from drivers/tee/gud/500/MobiCoreDriver/nq.c:36:0:
 drivers/tee/gud/500/MobiCoreDriver/mci/mciiwp.h:19:81: fatal error: public/GP/tee_client_types.h: No such file or directory
  #include "public/GP/tee_client_types.h" /* teec_uuid FIXME it's all mixed up! */
                                                                                  ^
 compilation terminated.
 make[5]: *** [scripts/Makefile.build:333: drivers/tee/gud/500/MobiCoreDriver/nq.o] Error 1
-In file included from drivers/power/oplus/oplus_charger.h:41:0,
-                 from drivers/power/oplus/oplus_debug_info.c:18:
-drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:31:18: fatal error: tcpm.h: No such file or directory
- #include <tcpm.h>
-                  ^
-compilation terminated.
-make[3]: *** [scripts/Makefile.build:334: drivers/power/oplus/oplus_debug_info.o] Error 1
+cc1: all warnings being treated as errors
+make[4]: *** [scripts/Makefile.build:333: drivers/soc/oplus/system/oplus_project/mtk/oplus_project.o] Error 1
+make[3]: *** [scripts/Makefile.build:637: drivers/soc/oplus/system/oplus_project] Error 2
+make[3]: *** Waiting for unfinished jobs....
+make[4]: *** [scripts/Makefile.build:637: drivers/tee/gud/500/MobiCoreDriver] Error 2
 drivers/soc/oplus/system/theia/bscheck.c:72:35: error: initializer element is not constant
  static const int stage_total_size=stage_brief_size*flow_size;
                                    ^~~~~~~~~~~~~~~~
@@ -279,14 +82,17 @@ drivers/soc/oplus/system/theia/bscheck.c:270:36: error: excess elements in array
      char sbuf[stage_total_size] = {0};
                                     ^
 drivers/soc/oplus/system/theia/bscheck.c:270:36: note: (near initialization for 'sbuf')
+make[3]: *** [scripts/Makefile.build:637: drivers/tee/gud/500] Error 2
+make[2]: *** [scripts/Makefile.build:637: drivers/tee/gud] Error 2
+make[2]: *** Waiting for unfinished jobs....
+drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
+drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
 cc1: all warnings being treated as errors
-make[4]: *** [scripts/Makefile.build:333: drivers/soc/oplus/system/theia/bscheck.o] Error 1
-make[3]: *** [scripts/Makefile.build:637: drivers/soc/oplus/system/theia] Error 2
-make[2]: *** [scripts/Makefile.build:637: drivers/soc/oplus/system] Error 2
-make[1]: *** [scripts/Makefile.build:637: drivers/soc] Error 2
-make[1]: *** Waiting for unfinished jobs....
-In file included from ./drivers/misc/mediatek/cmdq/v3/mt6765/../cmdq_helper_ext.h:14:0,
-                 from ./drivers/misc/mediatek/cmdq/v3/mt6765/../cmdq_reg.h:12,
+make[4]: *** [scripts/Makefile.build:334: drivers/soc/oplus/system/theia/bscheck.o] Error 1
+make[4]: *** Waiting for unfinished jobs....
+make[1]: *** [scripts/Makefile.build:637: drivers/tee] Error 2
+In file included from ./drivers/misc/mediatek/cmdq/v3/cmdq_helper_ext.h:14:0,
+                 from ./drivers/misc/mediatek/cmdq/v3/cmdq_reg.h:12,
                  from drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.c:5:
 ./drivers/misc/mediatek/cmdq/v3/mt6765/../cmdq_def.h:21:25: fatal error: cmdq_engine.h: No such file or directory
  #include "cmdq_engine.h"
@@ -294,9 +100,9 @@ In file included from ./drivers/misc/mediatek/cmdq/v3/mt6765/../cmdq_helper_ext.
 compilation terminated.
 make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.o] Error 1
 make[5]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/cmdq/v3/mt6765] Error 2
-make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/cmdq/v3] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/cmdq] Error 2
-make[3]: *** Waiting for unfinished jobs....
+make[5]: *** Waiting for unfinished jobs....
+drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
+drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
 drivers/misc/mediatek/emi/mt6765/../submodule/pasr_api_v1.c:9:20: fatal error: mt_emi.h: No such file or directory
  #include <mt_emi.h>
                     ^
@@ -307,56 +113,64 @@ drivers/misc/mediatek/leds/mt6765/mtk_leds.c:20:25: fatal error: mtk_leds_sw.h: 
  #include <mtk_leds_sw.h>
                          ^
 compilation terminated.
+drivers/misc/mediatek/leds/mtk_leds_drv.c:19:26: fatal error: mtk_leds_drv.h: No such file or directory
+ #include <mtk_leds_drv.h>
+                          ^
+compilation terminated.
 make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/leds/mt6765/mtk_leds.o] Error 1
 make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/leds/mt6765] Error 2
 make[4]: *** Waiting for unfinished jobs....
+make[4]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/leds/mtk_leds_drv.o] Error 1
+make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/leds] Error 2
+make[3]: *** Waiting for unfinished jobs....
 drivers/misc/mediatek/emi/mt6765/../emi_ctrl_v1.c:17:20: fatal error: mt_emi.h: No such file or directory
  #include <mt_emi.h>
                     ^
 compilation terminated.
 make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/emi/mt6765/../emi_ctrl_v1.o] Error 1
-drivers/misc/mediatek/leds/mtk_leds_drv.c:19:26: fatal error: mtk_leds_drv.h: No such file or directory
- #include <mtk_leds_drv.h>
-                          ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/leds/mtk_leds_drv.o] Error 1
-make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/leds] Error 2
-In file included from drivers/tee/gud/500/MobiCoreDriver/session.c:45:0:
-drivers/tee/gud/500/MobiCoreDriver/mci/mcimcp.h:19:30: fatal error: mci/mcloadformat.h: No such file or directory
- #include "mci/mcloadformat.h"
-                              ^
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:333: drivers/tee/gud/500/MobiCoreDriver/session.o] Error 1
-make[4]: *** [scripts/Makefile.build:637: drivers/tee/gud/500/MobiCoreDriver] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/tee/gud/500] Error 2
-make[2]: *** [scripts/Makefile.build:637: drivers/tee/gud] Error 2
-make[1]: *** [scripts/Makefile.build:637: drivers/tee] Error 2
 drivers/misc/mediatek/emi/mt6765/../submodule/bwl_v1.c:16:20: fatal error: mt_emi.h: No such file or directory
  #include <mt_emi.h>
                     ^
 compilation terminated.
 make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/emi/mt6765/../submodule/bwl_v1.o] Error 1
-In file included from drivers/misc/mediatek/mmdvfs/mmdvfs_events.h:94:0,
-                 from drivers/misc/mediatek/mmdvfs/mmdvfs_pmqos.c:44:
-./include/trace/define_trace.h:89:43: fatal error: ./mmdvfs_events.h: No such file or directory
- #include TRACE_INCLUDE(TRACE_INCLUDE_FILE)
-                                           ^
+drivers/misc/mediatek/emi/mt6765/../submodule/elm_v2.c:21:20: fatal error: mt_emi.h: No such file or directory
+ #include <mt_emi.h>
+                    ^
 compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/mmdvfs/mmdvfs_pmqos.o] Error 1
-make[4]: *** Waiting for unfinished jobs....
+make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/emi/mt6765/../submodule/elm_v2.o] Error 1
 drivers/misc/mediatek/emi/mt6765/../submodule/mpu_v1.c:26:20: fatal error: mt_emi.h: No such file or directory
  #include <mt_emi.h>
                     ^
 compilation terminated.
 make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/emi/mt6765/../submodule/mpu_v1.o] Error 1
+make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/emi/mt6765] Error 2
+make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/emi] Error 2
 In file included from drivers/misc/mediatek/ext_disp/mt6765/extd_utils.h:10:0,
-                 from drivers/misc/mediatek/ext_disp/mt6765/extd_utils.c:12:
+                 from drivers/misc/mediatek/ext_disp/mt6765/mtk_extd_mgr.c:26:
 ./drivers/misc/mediatek/ext_disp/include/mtk_extd_mgr.h:15:23: fatal error: extd_info.h: No such file or directory
  #include "extd_info.h"
                        ^
 compilation terminated.
-make[5]: *** [scripts/Makefile.build:333: drivers/misc/mediatek/ext_disp/mt6765/extd_utils.o] Error 1
+make[5]: *** [scripts/Makefile.build:333: drivers/misc/mediatek/ext_disp/mt6765/mtk_extd_mgr.o] Error 1
 make[5]: *** Waiting for unfinished jobs....
+In file included from drivers/misc/mediatek/eccci/hif/modem_cldma_events.h:293:0,
+                 from drivers/misc/mediatek/eccci/hif/ccci_hif_cldma.c:51:
+./include/trace/define_trace.h:89:43: fatal error: ./modem_cldma_events.h: No such file or directory
+ #include TRACE_INCLUDE(TRACE_INCLUDE_FILE)
+                                           ^
+compilation terminated.
+In file included from drivers/misc/mediatek/ext_disp/mt6765/extd_utils.h:10:0,
+                 from drivers/misc/mediatek/ext_disp/mt6765/external_display.c:40:
+./drivers/misc/mediatek/ext_disp/include/mtk_extd_mgr.h:15:23: fatal error: extd_info.h: No such file or directory
+ #include "extd_info.h"
+                       ^
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:333: drivers/misc/mediatek/eccci/hif/ccci_hif_cldma.o] Error 1
+make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/eccci/hif] Error 2
+make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/eccci] Error 2
+make[5]: *** [scripts/Makefile.build:333: drivers/misc/mediatek/ext_disp/mt6765/external_display.o] Error 1
+make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/ext_disp/mt6765] Error 2
+make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/ext_disp] Error 2
 In file included from drivers/misc/mediatek/m4u/mt6765/m4u.h:9:0,
                  from drivers/misc/mediatek/m4u/mt6765/m4u_priv.h:23,
                  from drivers/misc/mediatek/m4u/mt6765/m4u_hw.c:9:
@@ -365,44 +179,3 @@ drivers/misc/mediatek/m4u/mt6765/../2.0/m4u_v2.h:10:22: fatal error: m4u_port.h:
                       ^
 compilation terminated.
 make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/m4u/mt6765/m4u_hw.o] Error 1
-make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/m4u/mt6765] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/m4u] Error 2
-drivers/misc/mediatek/emi/mt6765/../submodule/elm_v2.c:21:20: fatal error: mt_emi.h: No such file or directory
- #include <mt_emi.h>
-                    ^
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/emi/mt6765/../submodule/elm_v2.o] Error 1
-make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/emi/mt6765] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/emi] Error 2
-drivers/misc/mediatek/power_throttling/mtk_battery_percentage_throttling.c:12:47: fatal error: mtk_battery_percentage_throttling.h: No such file or directory
- #include <mtk_battery_percentage_throttling.h>
-                                               ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/power_throttling/mtk_battery_percentage_throttling.o] Error 1
-make[4]: *** Waiting for unfinished jobs....
-In file included from drivers/misc/mediatek/ext_disp/mt6765/extd_utils.h:10:0,
-                 from drivers/misc/mediatek/ext_disp/mt6765/external_display.c:40:
-./drivers/misc/mediatek/ext_disp/include/mtk_extd_mgr.h:15:23: fatal error: extd_info.h: No such file or directory
- #include "extd_info.h"
-                       ^
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:333: drivers/misc/mediatek/ext_disp/mt6765/external_display.o] Error 1
-make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/mmdvfs] Error 2
-In file included from drivers/misc/mediatek/ext_disp/mt6765/extd_utils.h:10:0,
-                 from drivers/misc/mediatek/ext_disp/mt6765/mtk_extd_mgr.c:26:
-./drivers/misc/mediatek/ext_disp/include/mtk_extd_mgr.h:15:23: fatal error: extd_info.h: No such file or directory
- #include "extd_info.h"
-                       ^
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:333: drivers/misc/mediatek/ext_disp/mt6765/mtk_extd_mgr.o] Error 1
-make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/ext_disp/mt6765] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/ext_disp] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/staging/android/mtk_ion] Error 2
-make[2]: *** [scripts/Makefile.build:637: drivers/staging/android] Error 2
-make[1]: *** [scripts/Makefile.build:637: drivers/staging] Error 2
-make[2]: *** [scripts/Makefile.build:637: drivers/power/oplus] Error 2
-make[1]: *** [scripts/Makefile.build:637: drivers/power] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/power_throttling] Error 2
-make[2]: *** [scripts/Makefile.build:637: drivers/misc/mediatek] Error 2
-make[1]: *** [scripts/Makefile.build:637: drivers/misc] Error 2
-make: *** [Makefile:1172: drivers] Error 2
