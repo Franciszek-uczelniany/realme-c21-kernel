@@ -5,17 +5,20 @@ on:
     branches:
       - master
   pull_request:
+  workflow_dispatch:    # Allows manual run from GitHub UI
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout kernel source
       - name: Checkout kernel source
         uses: actions/checkout@v4
         with:
           submodules: true
 
+      # Install dependencies
       - name: Install dependencies
         run: |
           sudo apt-get update
@@ -36,25 +39,32 @@ jobs:
         run: |
           git clone --depth=1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android11-release gcc-4.9
 
-      # Download Clang (Android 10/11 prebuilt)
+      # Download Clang
       - name: Download Clang
         run: |
           wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/android10-dev/clang-r353983c.tar.gz -O clang.tar.gz
           mkdir clang && tar -xf clang.tar.gz -C clang
 
-      # Clone Realme C21 Vendor Source parallel to kernel repo
-      - name: Clone Realme C21 Vendor Source
+      # Clone only the vendor folder using sparse checkout
+      - name: Clone vendor only
         run: |
           cd $GITHUB_WORKSPACE
-          git clone --depth=1 https://github.com/realme-kernel-opensource/realme_C21-AndroidR-vendor-source.git ../../../../realme_C21-AndroidR-vendor-source
+          git clone --no-checkout --depth=1 --filter=tree:0 https://github.com/saidanimelek26/realme-c21-kernel.git vendor-temp
+          cd vendor-temp
+          git sparse-checkout init --cone
+          git sparse-checkout set vendor/
+          git checkout
+          mv vendor $GITHUB_WORKSPACE/vendor
+          cd $GITHUB_WORKSPACE
+          rm -rf vendor-temp
 
-      # Set up toolchain PATH
-      - name: Setup Toolchain PATH
+      # Setup toolchain PATH
+      - name: Setup toolchain PATH
         run: |
           echo "$GITHUB_WORKSPACE/clang/bin:$GITHUB_WORKSPACE/gcc-4.9/bin:/usr/bin:/bin" >> $GITHUB_PATH
 
-      # Set up ccache
-      - name: Set up ccache
+      # Setup ccache
+      - name: Setup ccache
         run: |
           mkdir -p ~/.ccache/bin
           ln -sf $(which ccache) ~/.ccache/bin/clang
@@ -64,7 +74,7 @@ jobs:
           echo "$HOME/.ccache/bin:$PATH" >> $GITHUB_PATH
 
       # Build kernel
-      - name: Build Kernel
+      - name: Build kernel
         run: |
           export KBUILD_BUILD_USER="snowluna"
           export KBUILD_BUILD_HOST="android-build"
@@ -83,7 +93,7 @@ jobs:
         run: ccache -s || true
 
       # Prepare flashable files for artifact
-      - name: Prepare flashable files for artifact
+      - name: Prepare flashable files
         run: |
           mkdir -p artifact
           cp out/arch/arm64/boot/Image.gz-dtb artifact/
