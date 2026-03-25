@@ -57,173 +57,421 @@ OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY
 OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_CAMERA_COMMON
 OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_THEIA
 OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_APP_MONITOR
-drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
-drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
-drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
-drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
-drivers/tee/Makefile:3: "tee config----- CONFIG_TEE: y"
-drivers/tee/Makefile:4: "tee config----- CONFIG_TRUSTONIC_TEE_SUPPORT: y"
+drivers/tee/Makefile:3: "tee config----- CONFIG_TEE: Y"
+drivers/tee/Makefile:4: "tee config----- CONFIG_TRUSTONIC_TEE_SUPPORT: Y"
 drivers/tee/Makefile:5: "tee config----- CONFIG_TRUSTONIC_TEE_VERSION: "500""
+scripts/basic/fixdep.c:402:1: fatal error: opening dependency file scripts/basic/.fixdep.d: Permission denied
+ }
+ ^
+compilation terminated.
+make[4]: *** [scripts/Makefile.host:90: scripts/basic/fixdep] Error 1
+make[3]: *** [Makefile:482: scripts_basic] Error 2
 drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
 drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
-drivers/soc/oppo/oppo_criticallog/criticallog_class.c:23:31: fatal error: criticallog_class.h: No such file or directory
- #include <criticallog_class.h>
-                               ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/soc/oppo/oppo_criticallog/criticallog_class.o] Error 1
-make[4]: *** Waiting for unfinished jobs....
-drivers/soc/oppo/oppo_nfc/oppo_nfc.c: In function 'nfc_read_func':
-drivers/soc/oppo/oppo_nfc/oppo_nfc.c:78:9: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
-  switch((uint32_t)(p)) {
-         ^
-cc1: all warnings being treated as errors
-make[4]: *** [scripts/Makefile.build:334: drivers/soc/oppo/oppo_nfc/oppo_nfc.o] Error 1
-make[3]: *** [scripts/Makefile.build:637: drivers/soc/oppo/oppo_nfc] Error 2
-make[3]: *** Waiting for unfinished jobs....
-drivers/soc/oplus/system/theia/bscheck.c:72:35: error: initializer element is not constant
- static const int stage_total_size=stage_brief_size*flow_size;
-                                   ^~~~~~~~~~~~~~~~
-drivers/soc/oplus/system/theia/bscheck.c: In function 'black_screen_report_proc_write':
-drivers/soc/oplus/system/theia/bscheck.c:242:5: error: variable-sized object may not be initialized
-     char buffer[stage_brief_size] = {0};
-     ^~~~
-drivers/soc/oplus/system/theia/bscheck.c:242:38: error: excess elements in array initializer [-Werror]
-     char buffer[stage_brief_size] = {0};
-                                      ^
-drivers/soc/oplus/system/theia/bscheck.c:242:38: note: (near initialization for 'buffer')
-drivers/soc/oplus/system/theia/bscheck.c: In function 'rick_pick_fail_stage':
-drivers/soc/oplus/system/theia/bscheck.c:270:5: error: variable-sized object may not be initialized
-     char sbuf[stage_total_size] = {0};
-     ^~~~
-drivers/soc/oplus/system/theia/bscheck.c:270:36: error: excess elements in array initializer [-Werror]
-     char sbuf[stage_total_size] = {0};
-                                    ^
-drivers/soc/oplus/system/theia/bscheck.c:270:36: note: (near initialization for 'sbuf')
-cc1: all warnings being treated as errors
-In file included from drivers/staging/android/mtk_ion/ion.c:45:0:
-drivers/staging/android/mtk_ion/mtk/ion_drv_priv.h:9:22: fatal error: ion_priv.h: No such file or directory
- #include "ion_priv.h"
+arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:535.20-550.4: Warning (i2c_bus_reg): /soc/i2c@11007000/rtq2134-regulator: I2C bus unit address format error, expected "18"
+arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:552.29-568.4: Warning (i2c_bus_reg): /soc/i2c@11007000/rtq5115-regulator: I2C bus unit address format error, expected "3f"
+arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:577.20-600.4: Warning (i2c_bus_reg): /soc/i2c@11008000/rtq2134-regulator: I2C bus unit address format error, expected "18"
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:335.23-344.5: Warning (spi_bus_bridge): /soc/spi@10013000: incorrect #address-cells for SPI bus
+  also defined at arch/arm64/boot/dts/mediatek/mt2712.dtsi:335.23-344.5
+  also defined at arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:1937.8-1945.3
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:335.23-344.5: Warning (spi_bus_bridge): /soc/spi@10013000: incorrect #size-cells for SPI bus
+  also defined at arch/arm64/boot/dts/mediatek/mt2712.dtsi:335.23-344.5
+  also defined at arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:1937.8-1945.3
+arch/arm64/boot/dts/mediatek/auto2712p1v1-ivi-boot.dtb: Warning (spi_bus_reg): Failed prerequisite 'spi_bus_bridge'
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1364.4-42: Warning (mboxes_property): /soc/dispsys@14000000:mboxes: cell 4 is not a phandle reference
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1359.40-1365.5: Warning (mboxes_property): /soc/dispsys@14000000: Missing property '#mbox-cells' in node /soc/intpol-controller@10220a80 or bad phandle (referred from mboxes[4])
+  also defined at arch/arm64/boot/dts/mediatek/mt2712.dtsi:1359.40-1365.5
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1385.4-24: Warning (mboxes_property): /soc/rdma@14001000:mboxes: property size (12) too small for cell size 3
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1400.4-24: Warning (mboxes_property): /soc/rdma@14002000:mboxes: property size (12) too small for cell size 3
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1734.4-24: Warning (mboxes_property): /soc/rdma@14028000:mboxes: property size (12) too small for cell size 3
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1886.4-24: Warning (mboxes_property): /soc/rdma@14033000:mboxes: property size (12) too small for cell size 3
+arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:1918.19-1920.5: Warning (graph_endpoint): /soc/rdma@1400f000/port/endpoint: graph connection to node '/soc/dsi@14035000/ports/port/endpoint' is not bidirectional
+arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:535.20-550.4: Warning (i2c_bus_reg): /soc/i2c@11007000/rtq2134-regulator: I2C bus unit address format error, expected "18"
+arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:552.29-568.4: Warning (i2c_bus_reg): /soc/i2c@11007000/rtq5115-regulator: I2C bus unit address format error, expected "3f"
+arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:577.20-600.4: Warning (i2c_bus_reg): /soc/i2c@11008000/rtq2134-regulator: I2C bus unit address format error, expected "18"
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:335.23-344.5: Warning (spi_bus_bridge): /soc/spi@10013000: incorrect #address-cells for SPI bus
+  also defined at arch/arm64/boot/dts/mediatek/mt2712.dtsi:335.23-344.5
+  also defined at arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:1937.8-1945.3
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:335.23-344.5: Warning (spi_bus_bridge): /soc/spi@10013000: incorrect #size-cells for SPI bus
+  also defined at arch/arm64/boot/dts/mediatek/mt2712.dtsi:335.23-344.5
+  also defined at arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:1937.8-1945.3
+arch/arm64/boot/dts/mediatek/auto2712p1v1-ivi-nand-boot.dtb: Warning (spi_bus_reg): Failed prerequisite 'spi_bus_bridge'
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1364.4-42: Warning (mboxes_property): /soc/dispsys@14000000:mboxes: cell 4 is not a phandle reference
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1359.40-1365.5: Warning (mboxes_property): /soc/dispsys@14000000: Missing property '#mbox-cells' in node /soc/intpol-controller@10220a80 or bad phandle (referred from mboxes[4])
+  also defined at arch/arm64/boot/dts/mediatek/mt2712.dtsi:1359.40-1365.5
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1385.4-24: Warning (mboxes_property): /soc/rdma@14001000:mboxes: property size (12) too small for cell size 3
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1400.4-24: Warning (mboxes_property): /soc/rdma@14002000:mboxes: property size (12) too small for cell size 3
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1734.4-24: Warning (mboxes_property): /soc/rdma@14028000:mboxes: property size (12) too small for cell size 3
+arch/arm64/boot/dts/mediatek/mt2712.dtsi:1886.4-24: Warning (mboxes_property): /soc/rdma@14033000:mboxes: property size (12) too small for cell size 3
+arch/arm64/boot/dts/mediatek/auto2712p1v1-common.dtsi:1918.19-1920.5: Warning (graph_endpoint): /soc/rdma@1400f000/port/endpoint: graph connection to node '/soc/dsi@14035000/ports/port/endpoint' is not bidirectional
+./arch/arm64/boot/dts/mediatek/mt6357.dtsi:419.4-14: Warning (reg_format): /pwrap@1000d000/main_pmic/leds-mt6357/Isink1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/mt6765.dtb: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/mt6765.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/mt6765.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+./arch/arm64/boot/dts/mediatek/mt6357.dtsi:418.10-423.5: Warning (avoid_default_addr_size): /pwrap@1000d000/main_pmic/leds-mt6357/Isink1: Relying on default #address-cells value
+./arch/arm64/boot/dts/mediatek/mt6357.dtsi:418.10-423.5: Warning (avoid_default_addr_size): /pwrap@1000d000/main_pmic/leds-mt6357/Isink1: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/mt6765.dts:984.11-1023.4: Warning (gpios_property): /scp_dvfs: Missing property '#gpio-cells' in node /gpio@10005000 or bad phandle (referred from gpio[0])
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dts:766.6-19: Warning (reg_format): /fragment@8/__overlay__/lcm_bias@3e:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dts:777.16-29: Warning (reg_format): /fragment@9/__overlay__/nfc_nxp@28:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dts:802.3-13: Warning (reg_format): /fragment@11/__overlay__/touchscreen@0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+./arch/arm64/boot/dts/mediatek/rt9471_single.dtsi:17.3-16: Warning (reg_format): /fragment@31/__overlay__/rt-swchg@53:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+./arch/arm64/boot/dts/mediatek/bq25910.dtsi:4.3-16: Warning (reg_format): /fragment@32/__overlay__/bq25910@4B:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+./arch/arm64/boot/dts/mediatek/bq2589x.dtsi:17.3-16: Warning (reg_format): /fragment@33/__overlay__/bq2589x@6a:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+./arch/arm64/boot/dts/mediatek/cust_mt6765_touch_1080x1920.dtsi:24.3-16: Warning (reg_format): /fragment@85/__overlay__/gt1151@14:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dtb: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dts:764.13-768.4: Warning (avoid_default_addr_size): /fragment@8/__overlay__/lcm_bias@3e: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dts:764.13-768.4: Warning (avoid_default_addr_size): /fragment@8/__overlay__/lcm_bias@3e: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dts:775.19-783.10: Warning (avoid_default_addr_size): /fragment@9/__overlay__/nfc_nxp@28: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dts:775.19-783.10: Warning (avoid_default_addr_size): /fragment@9/__overlay__/nfc_nxp@28: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dts:800.18-842.4: Warning (avoid_default_addr_size): /fragment@11/__overlay__/touchscreen@0: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_206A1.dts:800.18-842.4: Warning (avoid_default_addr_size): /fragment@11/__overlay__/touchscreen@0: Relying on default #size-cells value
+./arch/arm64/boot/dts/mediatek/rt9471_single.dtsi:15.14-56.4: Warning (avoid_default_addr_size): /fragment@31/__overlay__/rt-swchg@53: Relying on default #address-cells value
+./arch/arm64/boot/dts/mediatek/rt9471_single.dtsi:15.14-56.4: Warning (avoid_default_addr_size): /fragment@31/__overlay__/rt-swchg@53: Relying on default #size-cells value
+./arch/arm64/boot/dts/mediatek/bq25910.dtsi:2.13-18.4: Warning (avoid_default_addr_size): /fragment@32/__overlay__/bq25910@4B: Relying on default #address-cells value
+./arch/arm64/boot/dts/mediatek/bq25910.dtsi:2.13-18.4: Warning (avoid_default_addr_size): /fragment@32/__overlay__/bq25910@4B: Relying on default #size-cells value
+./arch/arm64/boot/dts/mediatek/bq2589x.dtsi:15.13-33.4: Warning (avoid_default_addr_size): /fragment@33/__overlay__/bq2589x@6a: Relying on default #address-cells value
+./arch/arm64/boot/dts/mediatek/bq2589x.dtsi:15.13-33.4: Warning (avoid_default_addr_size): /fragment@33/__overlay__/bq2589x@6a: Relying on default #size-cells value
+./arch/arm64/boot/dts/mediatek/cust_mt6765_touch_1080x1920.dtsi:22.12-26.4: Warning (avoid_default_addr_size): /fragment@85/__overlay__/gt1151@14: Relying on default #address-cells value
+./arch/arm64/boot/dts/mediatek/cust_mt6765_touch_1080x1920.dtsi:22.12-26.4: Warning (avoid_default_addr_size): /fragment@85/__overlay__/gt1151@14: Relying on default #size-cells value
+./arch/arm64/boot/dts/oppo6765_206A1/cust.dtsi:508.25-516.3: Warning (interrupts_property): /fragment@71/__overlay__: Missing interrupt-parent
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:221.16-29: Warning (reg_format): /fragment@2/__overlay__/nfc_nxp@28:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:230.4-17: Warning (reg_format): /fragment@2/__overlay__/lcm_bias@3e:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:327.3-16: Warning (reg_format): /fragment@7/__overlay__/bq25601@6B:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:355.3-16: Warning (reg_format): /fragment@7/__overlay__/rt-swchg@53:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:1327.3-13: Warning (reg_format): /fragment@39/__overlay__/touchscreen@0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dtb: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:219.19-227.10: Warning (avoid_default_addr_size): /fragment@2/__overlay__/nfc_nxp@28: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:219.19-227.10: Warning (avoid_default_addr_size): /fragment@2/__overlay__/nfc_nxp@28: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:228.14-232.5: Warning (avoid_default_addr_size): /fragment@2/__overlay__/lcm_bias@3e: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:228.14-232.5: Warning (avoid_default_addr_size): /fragment@2/__overlay__/lcm_bias@3e: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:325.13-351.4: Warning (avoid_default_addr_size): /fragment@7/__overlay__/bq25601@6B: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:325.13-351.4: Warning (avoid_default_addr_size): /fragment@7/__overlay__/bq25601@6B: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:353.14-394.4: Warning (avoid_default_addr_size): /fragment@7/__overlay__/rt-swchg@53: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:353.14-394.4: Warning (avoid_default_addr_size): /fragment@7/__overlay__/rt-swchg@53: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:1325.16-1371.4: Warning (avoid_default_addr_size): /fragment@39/__overlay__/touchscreen@0: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20701.dts:1325.16-1371.4: Warning (avoid_default_addr_size): /fragment@39/__overlay__/touchscreen@0: Relying on default #size-cells value
+./arch/arm64/boot/dts/oppo6765_20701/cust.dtsi:472.25-480.3: Warning (interrupts_property): /fragment@67/__overlay__: Missing interrupt-parent
+./arch/arm64/boot/dts/oppo6765_20701/cust.dtsi:482.25-490.3: Warning (interrupts_property): /fragment@68/__overlay__: Missing interrupt-parent
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:724.3-16: Warning (reg_format): /fragment@6/__overlay__/sy6970@6a:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:854.6-19: Warning (reg_format): /fragment@14/__overlay__/lcm_bias@3e:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:865.16-29: Warning (reg_format): /fragment@15/__overlay__/nfc_nxp@28:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:890.3-13: Warning (reg_format): /fragment@17/__overlay__/touchscreen@0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:1430.3-16: Warning (reg_format): /fragment@38/__overlay__/bq25601@6B:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+./arch/arm64/boot/dts/mediatek/cust_mt6765_touch_1080x1920.dtsi:24.3-16: Warning (reg_format): /fragment@88/__overlay__/gt1151@14:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dtb: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:722.19-745.4: Warning (avoid_default_addr_size): /fragment@6/__overlay__/sy6970@6a: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:722.19-745.4: Warning (avoid_default_addr_size): /fragment@6/__overlay__/sy6970@6a: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:852.13-856.4: Warning (avoid_default_addr_size): /fragment@14/__overlay__/lcm_bias@3e: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:852.13-856.4: Warning (avoid_default_addr_size): /fragment@14/__overlay__/lcm_bias@3e: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:863.19-871.10: Warning (avoid_default_addr_size): /fragment@15/__overlay__/nfc_nxp@28: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:863.19-871.10: Warning (avoid_default_addr_size): /fragment@15/__overlay__/nfc_nxp@28: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:888.18-931.4: Warning (avoid_default_addr_size): /fragment@17/__overlay__/touchscreen@0: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:888.18-931.4: Warning (avoid_default_addr_size): /fragment@17/__overlay__/touchscreen@0: Relying on default #size-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:1428.13-1454.7: Warning (avoid_default_addr_size): /fragment@38/__overlay__/bq25601@6B: Relying on default #address-cells value
+arch/arm64/boot/dts/mediatek/oppo6765_20379.dts:1428.13-1454.7: Warning (avoid_default_addr_size): /fragment@38/__overlay__/bq25601@6B: Relying on default #size-cells value
+./arch/arm64/boot/dts/mediatek/cust_mt6765_touch_1080x1920.dtsi:22.12-26.4: Warning (avoid_default_addr_size): /fragment@88/__overlay__/gt1151@14: Relying on default #address-cells value
+./arch/arm64/boot/dts/mediatek/cust_mt6765_touch_1080x1920.dtsi:22.12-26.4: Warning (avoid_default_addr_size): /fragment@88/__overlay__/gt1151@14: Relying on default #size-cells value
+./arch/arm64/boot/dts/oppo6765_20379/cust.dtsi:508.25-516.3: Warning (interrupts_property): /fragment@74/__overlay__: Missing interrupt-parent
+drivers/gpu/mediatek/ged/src/ged_kpi.c:48:0: warning: "GED_TAG" redefined
+ #define GED_TAG "[GED_KPI]"
+ 
+In file included from drivers/gpu/mediatek/ged/src/ged_kpi.c:14:0:
+./drivers/gpu/mediatek/ged/include/ged_base.h:12:0: note: this is the location of the previous definition
+ #define GED_TAG "[GPU/GED]"
+ 
+drivers/gpu/mediatek/ged/src/ged_kpi.c:48:0: warning: "GED_TAG" redefined
+ #define GED_TAG "[GED_KPI]"
+ 
+In file included from drivers/gpu/mediatek/ged/src/ged_kpi.c:14:0:
+./drivers/gpu/mediatek/ged/include/ged_base.h:12:0: note: this is the location of the previous definition
+ #define GED_TAG "[GPU/GED]"
+ 
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c: In function 'MTKEnableMfgMtcmos0':
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:237:44: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]
+   "%s mfg0 (0x%p)", __func__, mtcmos_mfg0));
+                                            ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c: In function 'MTKDisableMfgMtcmos0':
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:254:50: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]
+   PVR_DPF((PVR_DBG_MESSAGE, "%s mfg0", __func__));
+                                                  ^
+In file included from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/include/pvr_notifier.h:47:0,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/include/mmu_common.h:88,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/devices/rogue/rgxdevice.h:50,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.h:10,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:8:
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c: In function 'MTKInitHWAPM':
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:335:27: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'void *' [-Wformat=]
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+                           ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:234:66: note: in definition of macro '__PVR_DPF_0x002UL'
+  #define __PVR_DPF_0x002UL(...) PVRSRVDebugPrintf(DBGPRIV_ERROR, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:275:21: note: in expansion of macro '__PVR_DPF'
+  #define PVR_DPF(x) __PVR_DPF x
+                     ^~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:335:3: note: in expansion of macro 'PVR_DPF'
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+   ^~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:338:27: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'void *' [-Wformat=]
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+                           ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:234:66: note: in definition of macro '__PVR_DPF_0x002UL'
+  #define __PVR_DPF_0x002UL(...) PVRSRVDebugPrintf(DBGPRIV_ERROR, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:275:21: note: in expansion of macro '__PVR_DPF'
+  #define PVR_DPF(x) __PVR_DPF x
+                     ^~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:338:3: note: in expansion of macro 'PVR_DPF'
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+   ^~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:341:27: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'void *' [-Wformat=]
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+                           ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:234:66: note: in definition of macro '__PVR_DPF_0x002UL'
+  #define __PVR_DPF_0x002UL(...) PVRSRVDebugPrintf(DBGPRIV_ERROR, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:275:21: note: in expansion of macro '__PVR_DPF'
+  #define PVR_DPF(x) __PVR_DPF x
+                     ^~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:341:3: note: in expansion of macro 'PVR_DPF'
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+   ^~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:344:27: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'void *' [-Wformat=]
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+                           ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:234:66: note: in definition of macro '__PVR_DPF_0x002UL'
+  #define __PVR_DPF_0x002UL(...) PVRSRVDebugPrintf(DBGPRIV_ERROR, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:275:21: note: in expansion of macro '__PVR_DPF'
+  #define PVR_DPF(x) __PVR_DPF x
+                     ^~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:344:3: note: in expansion of macro 'PVR_DPF'
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+   ^~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:347:27: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'void *' [-Wformat=]
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+                           ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:234:66: note: in definition of macro '__PVR_DPF_0x002UL'
+  #define __PVR_DPF_0x002UL(...) PVRSRVDebugPrintf(DBGPRIV_ERROR, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:275:21: note: in expansion of macro '__PVR_DPF'
+  #define PVR_DPF(x) __PVR_DPF x
+                     ^~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:347:3: note: in expansion of macro 'PVR_DPF'
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+   ^~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:350:27: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'void *' [-Wformat=]
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+                           ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:234:66: note: in definition of macro '__PVR_DPF_0x002UL'
+  #define __PVR_DPF_0x002UL(...) PVRSRVDebugPrintf(DBGPRIV_ERROR, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:275:21: note: in expansion of macro '__PVR_DPF'
+  #define PVR_DPF(x) __PVR_DPF x
+                     ^~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:350:3: note: in expansion of macro 'PVR_DPF'
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+   ^~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:353:27: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'void *' [-Wformat=]
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+                           ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:234:66: note: in definition of macro '__PVR_DPF_0x002UL'
+  #define __PVR_DPF_0x002UL(...) PVRSRVDebugPrintf(DBGPRIV_ERROR, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:275:21: note: in expansion of macro '__PVR_DPF'
+  #define PVR_DPF(x) __PVR_DPF x
+                     ^~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:353:3: note: in expansion of macro 'PVR_DPF'
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+   ^~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:356:27: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'void *' [-Wformat=]
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+                           ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:234:66: note: in definition of macro '__PVR_DPF_0x002UL'
+  #define __PVR_DPF_0x002UL(...) PVRSRVDebugPrintf(DBGPRIV_ERROR, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:275:21: note: in expansion of macro '__PVR_DPF'
+  #define PVR_DPF(x) __PVR_DPF x
+                     ^~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:356:3: note: in expansion of macro 'PVR_DPF'
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+   ^~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:359:27: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'void *' [-Wformat=]
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+                           ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:234:66: note: in definition of macro '__PVR_DPF_0x002UL'
+  #define __PVR_DPF_0x002UL(...) PVRSRVDebugPrintf(DBGPRIV_ERROR, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:275:21: note: in expansion of macro '__PVR_DPF'
+  #define PVR_DPF(x) __PVR_DPF x
+                     ^~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:359:3: note: in expansion of macro 'PVR_DPF'
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+   ^~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:362:27: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'void *' [-Wformat=]
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+                           ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:234:66: note: in definition of macro '__PVR_DPF_0x002UL'
+  #define __PVR_DPF_0x002UL(...) PVRSRVDebugPrintf(DBGPRIV_ERROR, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//include/pvr_debug.h:275:21: note: in expansion of macro '__PVR_DPF'
+  #define PVR_DPF(x) __PVR_DPF x
+                     ^~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:362:3: note: in expansion of macro 'PVR_DPF'
+   PVR_DPF((PVR_DBG_ERROR, "HWAPM: *g_pvRegsKM+0x%x = 0x%x",
+   ^~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c: In function 'MTKDoGpuDVFS':
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:409:44: warning: passing argument 1 of 'PVRSRVDevicePreClockSpeedChange' makes pointer from integer without a cast [-Wint-conversion]
+  eResult = PVRSRVDevicePreClockSpeedChange(ui32RGXDevIdx,
+                                            ^~~~~~~~~~~~~
+In file included from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/include/device.h:62:0,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/devices/rogue/rgxdevice.h:53,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.h:10,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:8:
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/include/power.h:106:14: note: expected 'PPVRSRV_DEVICE_NODE {aka struct _PVRSRV_DEVICE_NODE_ *}' but argument is of type 'IMG_UINT32 {aka unsigned int}'
+ PVRSRV_ERROR PVRSRVDevicePreClockSpeedChange(PPVRSRV_DEVICE_NODE psDeviceNode,
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:412:29: warning: passing argument 1 of 'PVRSRVGetDevicePowerState' makes pointer from integer without a cast [-Wint-conversion]
+   PVRSRVGetDevicePowerState(ui32RGXDevIdx, &ePowerState);
+                             ^~~~~~~~~~~~~
+In file included from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/include/device.h:62:0,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/devices/rogue/rgxdevice.h:53,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.h:10,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:8:
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/include/power.h:101:14: note: expected 'PCPVRSRV_DEVICE_NODE {aka const struct _PVRSRV_DEVICE_NODE_ *}' but argument is of type 'IMG_UINT32 {aka unsigned int}'
+ PVRSRV_ERROR PVRSRVGetDevicePowerState(PCPVRSRV_DEVICE_NODE psDeviceNode,
+              ^~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:421:25: warning: passing argument 1 of 'MTKWriteBackFreqToRGX' makes pointer from integer without a cast [-Wint-conversion]
+   MTKWriteBackFreqToRGX(ui32RGXDevIdx, ui32GPUFreq);
+                         ^~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:180:13: note: expected 'PVRSRV_DEVICE_NODE * {aka struct _PVRSRV_DEVICE_NODE_ *}' but argument is of type 'IMG_UINT32 {aka unsigned int}'
+ static void MTKWriteBackFreqToRGX(PVRSRV_DEVICE_NODE *psDevNode,
+             ^~~~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:433:37: warning: passing argument 1 of 'PVRSRVDevicePostClockSpeedChange' makes pointer from integer without a cast [-Wint-conversion]
+    PVRSRVDevicePostClockSpeedChange(ui32RGXDevIdx,
+                                     ^~~~~~~~~~~~~
+In file included from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/include/device.h:62:0,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/devices/rogue/rgxdevice.h:53,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.h:10,
+                 from drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:8:
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728//services/server/include/power.h:110:6: note: expected 'PPVRSRV_DEVICE_NODE {aka struct _PVRSRV_DEVICE_NODE_ *}' but argument is of type 'IMG_UINT32 {aka unsigned int}'
+ void PVRSRVDevicePostClockSpeedChange(PPVRSRV_DEVICE_NODE psDeviceNode,
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c: In function 'MTKSystemPrePowerState':
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:930:3: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]
+   ;
+   ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c: In function 'MTKSystemPostPowerState':
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:938:3: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]
+   ;
+   ^
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c: In function 'MTKMFGSystemInit':
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1296:1: warning: label 'ERROR' defined but not used [-Wunused-label]
+ ERROR:
+ ^~~~~
+At top level:
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1419:19: warning: 'mtk_mfg_2d_init' defined but not used [-Wunused-function]
+ static int __init mtk_mfg_2d_init(void)
+                   ^~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1409:19: warning: 'mtk_mfg_async_init' defined but not used [-Wunused-function]
+ static int __init mtk_mfg_async_init(void)
+                   ^~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1143:13: warning: 'MTKFakeGpuLoading' defined but not used [-Wunused-function]
+ static void MTKFakeGpuLoading(unsigned int *pui32Loading,
+             ^~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1078:19: warning: 'MTKGetPowerIndex' defined but not used [-Wunused-function]
+ static IMG_UINT32 MTKGetPowerIndex(void)
+                   ^~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1073:19: warning: 'MTKGetGpuIdle' defined but not used [-Wunused-function]
+ static IMG_UINT32 MTKGetGpuIdle(void)
+                   ^~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1068:19: warning: 'MTKGetGpuBlock' defined but not used [-Wunused-function]
+ static IMG_UINT32 MTKGetGpuBlock(void)
+                   ^~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1063:19: warning: 'MTKGetGpuLoading' defined but not used [-Wunused-function]
+ static IMG_UINT32 MTKGetGpuLoading(void)
+                   ^~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1056:21: warning: 'MTKGetCustomUpBoundGpuFreq' defined but not used [-Wunused-function]
+ static unsigned int MTKGetCustomUpBoundGpuFreq(void)
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1049:21: warning: 'MTKGetCustomBoostGpuFreq' defined but not used [-Wunused-function]
+ static unsigned int MTKGetCustomBoostGpuFreq(void)
+                     ^~~~~~~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:1019:13: warning: 'MTKCustomUpBoundGpuFreq' defined but not used [-Wunused-function]
+ static void MTKCustomUpBoundGpuFreq(unsigned int ui32FreqLevel)
+             ^~~~~~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:987:13: warning: 'MTKCustomBoostGpuFreq' defined but not used [-Wunused-function]
+ static void MTKCustomBoostGpuFreq(unsigned int ui32FreqLevel)
+             ^~~~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:982:21: warning: 'MTKCustomGetGpuFreqLevelCount' defined but not used [-Wunused-function]
+ static unsigned int MTKCustomGetGpuFreqLevelCount(void)
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:952:13: warning: 'MTKSetBottomGPUFreq' defined but not used [-Wunused-function]
+ static void MTKSetBottomGPUFreq(unsigned int ui32FreqLevel)
+             ^~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:944:13: warning: 'MTKBoostGpuFreq' defined but not used [-Wunused-function]
+ static void MTKBoostGpuFreq(void)
+             ^~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:784:13: warning: 'MTKDVFSTimerFuncCB' defined but not used [-Wunused-function]
+ static void MTKDVFSTimerFuncCB(void *pvData)
+             ^~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:554:13: warning: 'MTKFreqPowerLimitCB' defined but not used [-Wunused-function]
+ static void MTKFreqPowerLimitCB(unsigned int ui32LimitFreqID)
+             ^~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:499:21: warning: 'MTKCommitFreqForPVR' defined but not used [-Wunused-function]
+ static unsigned int MTKCommitFreqForPVR(unsigned long ui32NewFreq)
+                     ^~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:242:13: warning: 'MTKDisableMfgMtcmos0' defined but not used [-Wunused-function]
+ static void MTKDisableMfgMtcmos0(void)
+             ^~~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:223:13: warning: 'MTKEnableMfgMtcmos0' defined but not used [-Wunused-function]
+ static void MTKEnableMfgMtcmos0(void)
+             ^~~~~~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:82:17: warning: 'g_bTimerEnable' defined but not used [-Wunused-variable]
+ static IMG_BOOL g_bTimerEnable = IMG_FALSE;
+                 ^~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:71:17: warning: 'ghDVFSTimerLock' defined but not used [-Wunused-variable]
+ static POS_LOCK ghDVFSTimerLock;
+                 ^~~~~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/system/rogue/rgx_mtk/mt6765/mtk_mfgsys.c:70:19: warning: 'g_hDVFSTimer' defined but not used [-Wunused-variable]
+ static IMG_HANDLE g_hDVFSTimer;
+                   ^~~~~~~~~~~~
+drivers/gpu/mediatek/gpu_rgx/m1.13ED5776728/services/server/common/process_stats.c:2227:8: warning: no previous prototype for 'get_gl_mem_by_pid' [-Wmissing-prototypes]
+ size_t get_gl_mem_by_pid(pid_t pid)
+        ^~~~~~~~~~~~~~~~~
+drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
+drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
+In file included from drivers/mmc/host/mediatek/ComboA/mt6765/msdc_cust.c:26:0:
+drivers/mmc/host/mediatek/ComboA/mt6765/mtk_sd.h:144:22: fatal error: msdc_reg.h: No such file or directory
+ #include "msdc_reg.h"
                       ^
 compilation terminated.
-make[4]: *** [scripts/Makefile.build:333: drivers/soc/oplus/system/theia/bscheck.o] Error 1
-make[3]: *** [scripts/Makefile.build:637: drivers/soc/oplus/system/theia] Error 2
-make[3]: *** Waiting for unfinished jobs....
-make[4]: *** [scripts/Makefile.build:333: drivers/staging/android/mtk_ion/ion.o] Error 1
-make[4]: *** Waiting for unfinished jobs....
-In file included from drivers/power/oplus/charger_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/charger_ic/oplus_bq2589x.c:35:
-drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:40: fatal error: ../../supply/charger_class.h: No such file or directory
- #include "../../supply/charger_class.h"
-                                        ^
-compilation terminated.
-In file included from drivers/power/oplus/charger_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/charger_ic/oplus_bq2591x.c:32:
-drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:40: fatal error: ../../supply/charger_class.h: No such file or directory
- #include "../../supply/charger_class.h"
-                                        ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_bq2589x.o] Error 1
-make[4]: *** Waiting for unfinished jobs....
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_bq2591x.o] Error 1
+make[5]: *** [scripts/Makefile.build:333: drivers/mmc/host/mediatek/ComboA/mt6765/msdc_cust.o] Error 1
+make[4]: *** [scripts/Makefile.build:637: drivers/mmc/host/mediatek/ComboA] Error 2
+make[3]: *** [scripts/Makefile.build:637: drivers/mmc/host/mediatek] Error 2
+make[2]: *** [scripts/Makefile.build:637: drivers/mmc/host] Error 2
+make[2]: *** Waiting for unfinished jobs....
 In file included from drivers/power/oplus/adapter_ic/../oplus_charger.h:41:0,
                  from drivers/power/oplus/adapter_ic/oplus_stm.c:20:
 drivers/power/oplus/adapter_ic/../charger_ic/oplus_battery_mtk6765R.h:27:40: fatal error: ../../supply/charger_class.h: No such file or directory
  #include "../../supply/charger_class.h"
                                         ^
 compilation terminated.
-In file included from drivers/power/oplus/gauge_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/gauge_ic/oplus_bq27541.c:52:
-drivers/power/oplus/gauge_ic/../charger_ic/oplus_battery_mtk6765R.h:27:40: fatal error: ../../supply/charger_class.h: No such file or directory
- #include "../../supply/charger_class.h"
-                                        ^
-compilation terminated.
-In file included from drivers/power/oplus/charger_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/charger_ic/oplus_rt9471.h:9,
-                 from drivers/power/oplus/charger_ic/oplus_rt9471.c:33:
-drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:40: fatal error: ../../supply/charger_class.h: No such file or directory
- #include "../../supply/charger_class.h"
-                                        ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_rt9471.o] Error 1
 make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/adapter_ic/oplus_stm.o] Error 1
 make[3]: *** [scripts/Makefile.build:637: drivers/power/oplus/adapter_ic] Error 2
-make[3]: *** Waiting for unfinished jobs....
-In file included from drivers/power/oplus/charger_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/charger_ic/oplus_short_ic.c:50:
-drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:40: fatal error: ../../supply/charger_class.h: No such file or directory
- #include "../../supply/charger_class.h"
-                                        ^
-compilation terminated.
-In file included from drivers/mmc/host/mediatek/ComboA/mt6765/autok_dvfs.c:13:0:
-drivers/mmc/host/mediatek/ComboA/mt6765/mtk_sd.h:144:22: fatal error: msdc_reg.h: No such file or directory
- #include "msdc_reg.h"
-                      ^
-compilation terminated.
-In file included from drivers/mmc/host/mediatek/ComboA/mt6765/msdc_cust.c:26:0:
-drivers/mmc/host/mediatek/ComboA/mt6765/mtk_sd.h:144:22: fatal error: msdc_reg.h: No such file or directory
- #include "msdc_reg.h"
-                      ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_short_ic.o] Error 1
-make[5]: *** [scripts/Makefile.build:334: drivers/mmc/host/mediatek/ComboA/mt6765/autok_dvfs.o] Error 1
-make[5]: *** Waiting for unfinished jobs....
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/gauge_ic/oplus_bq27541.o] Error 1
-make[3]: *** [scripts/Makefile.build:637: drivers/power/oplus/gauge_ic] Error 2
-make[5]: *** [scripts/Makefile.build:334: drivers/mmc/host/mediatek/ComboA/mt6765/msdc_cust.o] Error 1
-In file included from drivers/soc/mediatek/mtk-pm-qos-trace.h:78:0,
-                 from drivers/soc/mediatek/mtk-pm-qos.c:26:
-./include/trace/define_trace.h:89:43: fatal error: ./mtk-pm-qos-trace.h: No such file or directory
- #include TRACE_INCLUDE(TRACE_INCLUDE_FILE)
-                                           ^
-compilation terminated.
-drivers/soc/oplus/system/oplus_project/mtk/oplus_project.c: In function 'project_read_func':
-drivers/soc/oplus/system/oplus_project/mtk/oplus_project.c:27:26: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
- #define Ptr2UINT32(p)    (uint32_t)(p)
-                          ^
-drivers/soc/oplus/system/oplus_project/mtk/oplus_project.c:598:12: note: in expansion of macro 'Ptr2UINT32'
-     switch(Ptr2UINT32(p)) {
-            ^~~~~~~~~~
-make[3]: *** [scripts/Makefile.build:333: drivers/soc/mediatek/mtk-pm-qos.o] Error 1
-make[2]: *** [scripts/Makefile.build:637: drivers/soc/mediatek] Error 2
-make[2]: *** Waiting for unfinished jobs....
-In file included from drivers/staging/android/mtk_ion/ion_priv.h:21:0,
-                 from drivers/staging/android/mtk_ion/ion_page_pool.c:16:
-drivers/staging/android/mtk_ion/mtk/ion_drv.h:257:28: error: unknown type name 'ion_phys_addr_t'
- int ion_drv_create_FB_heap(ion_phys_addr_t fb_base, size_t fb_size);
-                            ^~~~~~~~~~~~~~~
-drivers/staging/android/mtk_ion/mtk/ion_drv.h:264:44: error: 'struct ion_platform_heap' declared inside parameter list will not be visible outside of this definition or declaration [-Werror]
- struct ion_heap *ion_mm_heap_create(struct ion_platform_heap *unused);
-                                            ^~~~~~~~~~~~~~~~~
-drivers/staging/android/mtk_ion/mtk/ion_drv.h:267:44: error: 'struct ion_platform_heap' declared inside parameter list will not be visible outside of this definition or declaration [-Werror]
- struct ion_heap *ion_fb_heap_create(struct ion_platform_heap *heap_data);
-                                            ^~~~~~~~~~~~~~~~~
-drivers/staging/android/mtk_ion/mtk/ion_drv.h:272:45: error: 'struct ion_platform_heap' declared inside parameter list will not be visible outside of this definition or declaration [-Werror]
- struct ion_heap *ion_sec_heap_create(struct ion_platform_heap *unused);
-                                             ^~~~~~~~~~~~~~~~~
-cc1: all warnings being treated as errors
-In file included from drivers/power/oplus/charger_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/charger_ic/oplus_bq2560x.c:42:
-drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:40: fatal error: ../../supply/charger_class.h: No such file or directory
- #include "../../supply/charger_class.h"
-                                        ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:333: drivers/staging/android/mtk_ion/ion_page_pool.o] Error 1
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_bq2560x.o] Error 1
-In file included from drivers/power/oplus/charger_ic/../oplus_charger.h:41:0,
-                 from drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.c:54:
-drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:40: fatal error: ../../supply/charger_class.h: No such file or directory
- #include "../../supply/charger_class.h"
-                                        ^
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.o] Error 1
-make[3]: *** [scripts/Makefile.build:637: drivers/power/oplus/charger_ic] Error 2
 make[2]: *** [scripts/Makefile.build:637: drivers/power/oplus] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/soc/oppo/oppo_criticallog] Error 2
-cc1: all warnings being treated as errors
-make[1]: *** [scripts/Makefile.build:637: drivers/power] Error 2
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [scripts/Makefile.build:637: drivers/mmc] Error 2
 make[1]: *** Waiting for unfinished jobs....
-make[4]: *** [scripts/Makefile.build:334: drivers/soc/oplus/system/oplus_project/mtk/oplus_project.o] Error 1
-make[4]: *** Waiting for unfinished jobs....
+make[1]: *** [scripts/Makefile.build:637: drivers/power] Error 2
+drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
+drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
 In file included from ./drivers/misc/mediatek/cmdq/v3/cmdq_helper_ext.h:14:0,
                  from ./drivers/misc/mediatek/cmdq/v3/cmdq_reg.h:12,
                  from drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.c:5:
@@ -233,62 +481,61 @@ In file included from ./drivers/misc/mediatek/cmdq/v3/cmdq_helper_ext.h:14:0,
 compilation terminated.
 make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.o] Error 1
 make[5]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/cmdq/v3/mt6765] Error 2
-make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/cmdq/v3] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/cmdq] Error 2
-make[3]: *** Waiting for unfinished jobs....
-drivers/misc/mediatek/debug_latch/plat_dbg_info/plat_dbg_info.c:15:27: fatal error: plat_dbg_info.h: No such file or directory
- #include <plat_dbg_info.h>
-                           ^
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:333: drivers/misc/mediatek/debug_latch/plat_dbg_info/plat_dbg_info.o] Error 1
-make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/debug_latch/plat_dbg_info] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/debug_latch] Error 2
+make[5]: *** Waiting for unfinished jobs....
 drivers/misc/mediatek/dbgtop/dbgtop.c:19:20: fatal error: dbgtop.h: No such file or directory
  #include <dbgtop.h>
                     ^
 compilation terminated.
 make[4]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/dbgtop/dbgtop.o] Error 1
 make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/dbgtop] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/staging/android/mtk_ion] Error 2
-make[2]: *** [scripts/Makefile.build:637: drivers/staging/android] Error 2
-make[1]: *** [scripts/Makefile.build:637: drivers/staging] Error 2
-make[2]: *** [scripts/Makefile.build:637: drivers/soc/oppo] Error 2
+make[3]: *** Waiting for unfinished jobs....
+drivers/misc/mediatek/debug_latch/plat_dbg_info/plat_dbg_info.c:15:27: fatal error: plat_dbg_info.h: No such file or directory
+ #include <plat_dbg_info.h>
+                           ^
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/debug_latch/plat_dbg_info/plat_dbg_info.o] Error 1
+make[5]: *** Waiting for unfinished jobs....
 drivers/misc/mediatek/dramc/dramc.c:24:22: fatal error: dramc_io.h: No such file or directory
  #include <dramc_io.h>
                       ^
 compilation terminated.
 make[4]: *** [scripts/Makefile.build:333: drivers/misc/mediatek/dramc/dramc.o] Error 1
-make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/dramc] Error 2
-make[4]: *** [scripts/Makefile.build:637: drivers/mmc/host/mediatek/ComboA] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/mmc/host/mediatek] Error 2
-make[2]: *** [scripts/Makefile.build:637: drivers/mmc/host] Error 2
-make[1]: *** [scripts/Makefile.build:637: drivers/mmc] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/soc/oplus/system/oplus_project] Error 2
-make[2]: *** [scripts/Makefile.build:637: drivers/soc/oplus/system] Error 2
-make[1]: *** [scripts/Makefile.build:637: drivers/soc] Error 2
-In file included from drivers/tee/gud/500/MobiCoreDriver/iwp.c:38:0:
-drivers/tee/gud/500/MobiCoreDriver/mci/mcimcp.h:19:30: fatal error: mci/mcloadformat.h: No such file or directory
- #include "mci/mcloadformat.h"
-                              ^
+make[4]: *** Waiting for unfinished jobs....
+make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/debug_latch/plat_dbg_info] Error 2
+make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/debug_latch] Error 2
+In file included from drivers/misc/mediatek/eccci/hif/modem_cldma_events.h:293:0,
+                 from drivers/misc/mediatek/eccci/hif/ccci_hif_cldma.c:51:
+./include/trace/define_trace.h:89:43: fatal error: ./modem_cldma_events.h: No such file or directory
+ #include TRACE_INCLUDE(TRACE_INCLUDE_FILE)
+                                           ^
 compilation terminated.
-make[5]: *** [scripts/Makefile.build:333: drivers/tee/gud/500/MobiCoreDriver/iwp.o] Error 1
+make[5]: *** [scripts/Makefile.build:333: drivers/misc/mediatek/eccci/hif/ccci_hif_cldma.o] Error 1
 make[5]: *** Waiting for unfinished jobs....
-In file included from drivers/tee/gud/500/MobiCoreDriver/mcp.c:37:0:
-drivers/tee/gud/500/MobiCoreDriver/mci/mcimcp.h:19:30: fatal error: mci/mcloadformat.h: No such file or directory
- #include "mci/mcloadformat.h"
-                              ^
+In file included from drivers/misc/mediatek/eccci/ccci_modem.c:18:0:
+./drivers/misc/mediatek/eccci/mt6765/ccci_platform.h:13:23: fatal error: modem_sys.h: No such file or directory
+ #include "modem_sys.h"
+                       ^
 compilation terminated.
-make[5]: *** [scripts/Makefile.build:333: drivers/tee/gud/500/MobiCoreDriver/mcp.o] Error 1
-In file included from drivers/tee/gud/500/MobiCoreDriver/mmu.c:43:0:
-drivers/tee/gud/500/MobiCoreDriver/mci/mcimcp.h:19:30: fatal error: mci/mcloadformat.h: No such file or directory
- #include "mci/mcloadformat.h"
-                              ^
+make[4]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/eccci/ccci_modem.o] Error 1
+make[4]: *** Waiting for unfinished jobs....
+make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/dramc] Error 2
+In file included from drivers/misc/mediatek/eccci/modem_sys1.c:38:0:
+./drivers/misc/mediatek/eccci/mt6765/ccci_platform.h:13:23: fatal error: modem_sys.h: No such file or directory
+ #include "modem_sys.h"
+                       ^
 compilation terminated.
-make[5]: *** [scripts/Makefile.build:333: drivers/tee/gud/500/MobiCoreDriver/mmu.o] Error 1
+make[4]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/eccci/modem_sys1.o] Error 1
+In file included from drivers/misc/mediatek/eccci/modem_sys3.c:34:0:
+./drivers/misc/mediatek/eccci/mt6765/ccci_platform.h:13:23: fatal error: modem_sys.h: No such file or directory
+ #include "modem_sys.h"
+                       ^
+compilation terminated.
+make[4]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/eccci/modem_sys3.o] Error 1
+make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/cmdq/v3] Error 2
+make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/cmdq] Error 2
+make[4]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/eccci/hif] Error 2
+make[3]: *** [scripts/Makefile.build:637: drivers/misc/mediatek/eccci] Error 2
 make[2]: *** [scripts/Makefile.build:637: drivers/misc/mediatek] Error 2
 make[1]: *** [scripts/Makefile.build:637: drivers/misc] Error 2
-make[4]: *** [scripts/Makefile.build:637: drivers/tee/gud/500/MobiCoreDriver] Error 2
-make[3]: *** [scripts/Makefile.build:637: drivers/tee/gud/500] Error 2
-make[2]: *** [scripts/Makefile.build:637: drivers/tee/gud] Error 2
-make[1]: *** [scripts/Makefile.build:637: drivers/tee] Error 2
 make: *** [Makefile:1172: drivers] Error 2
+make: *** Waiting for unfinished jobs....

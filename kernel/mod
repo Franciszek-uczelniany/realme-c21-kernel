@@ -1,8 +1,0 @@
-drivers/misc/mediatek/base/power/spm/common/mtk_idle_fs/mtk_lp_kernfs.c
-           drivers/misc/mediatek/dramc/mtk_lastdramc.c
-           drivers/misc/mediatek/emi/mt6765/mt_emi.h
-           drivers/pinctrl/mediatek/pinctrl-mtk-common-v2_debug.c
-           drivers/soc/mediatek/mtk-pm-qos.c
-           drivers/soc/oppo/oppo_criticallog/oppo_criticallog.c
-           drivers/tee/gud/500/MobiCoreDriver/mci/mcifc.h
-           drivers/tee/gud/500/MobiCoreDriver/mci/mcloadformat.h
