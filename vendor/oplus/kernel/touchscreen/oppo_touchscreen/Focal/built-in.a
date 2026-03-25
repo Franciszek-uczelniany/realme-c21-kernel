@@ -1,0 +1,12 @@
+!<thin>
+//                                              150       `
+focal_common.o/
+ft8006s_aa/focal_drivers_ft8006s_aa.o/
+ft8006s_aa/focal_test_ft8006s_aa.o/
+ft8722/focal_drivers_ft8722.o/
+ft8722/focal_test_ft8722.o/
+/0              0           0     0     644     377520    `
+/16             0           0     0     644     485432    `
+/55             0           0     0     644     405352    `
+/91             0           0     0     644     567352    `
+/122            0           0     0     644     404712    `

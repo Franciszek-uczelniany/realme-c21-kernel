@@ -1,0 +1,22 @@
+!<thin>
+//                                              288       `
+ilitek9881h_v3/ilitek_plat_qcom.o/
+ilitek9881h_v3/ilitek_ic.o/
+ilitek9881h_v3/ilitek_mp.o/
+ilitek9881h_v3/ilitek_fw.o/
+ilitek9881h_v3/ilitek_node.o/
+ilitek9882n/ili9882n_qcom.o/
+ilitek9882n/ili9882n_ic.o/
+ilitek9882n/ili9882n_mp.o/
+ilitek9882n/ili9882n_fw.o/
+ilitek9882n/ili9882n_node.o/
+/0              0           0     0     644     646432    `
+/35             0           0     0     644     514392    `
+/63             0           0     0     644     714384    `
+/91             0           0     0     644     501480    `
+/119            0           0     0     644     717024    `
+/149           /0           0     0     644     665360    `
+/178            0           0     0     644     533912    `
+/205            0           0     0     644     794088    `
+/232            0           0     0     644     520552    `
+/259           /0           0     0     644     821528    `

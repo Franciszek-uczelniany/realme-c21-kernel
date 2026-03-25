@@ -1,0 +1,1 @@
+cmd_drivers/input/oppo_fp_drivers/fpc/built-in.a :=  rm -f drivers/input/oppo_fp_drivers/fpc/built-in.a; /home/318074/realme-c21-build/gcc-linaro-6.2.1-2016.11-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-ar rcSTPD drivers/input/oppo_fp_drivers/fpc/built-in.a drivers/input/oppo_fp_drivers/fpc/fpc_irq.o

@@ -1,0 +1,1 @@
+cmd_fs/proc/oppo_healthinfo/built-in.a :=  rm -f fs/proc/oppo_healthinfo/built-in.a; /home/318074/realme-c21-build/gcc-linaro-6.2.1-2016.11-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-ar rcSTPD fs/proc/oppo_healthinfo/built-in.a fs/proc/oppo_healthinfo/oppo_cpuload.o fs/proc/oppo_healthinfo/fg_uid/built-in.a
