@@ -81,13 +81,13 @@ jobs:
 
           mkdir -p out
 
-          # Change directory to the kernel folder
+          # Enter kernel source directory
           cd kernel
 
           # Load device defconfig
           make O=../out ARCH=arm64 oppo6765_defconfig
 
-          # Compile kernel
+          # Build kernel
           make -j$(nproc --all) \
             ARCH=arm64 \
             O=../out \
