@@ -141,7 +141,7 @@ enum {
 	RESP_R1B
 };
 
-#include "msdc_reg.h"
+#include "../msdc_reg.h"
 
 /* MSDC_CFG[START_BIT] value */
 #define START_AT_RISING                 (0x0)

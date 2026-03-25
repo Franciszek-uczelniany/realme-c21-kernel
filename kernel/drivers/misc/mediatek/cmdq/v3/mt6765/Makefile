@@ -11,7 +11,8 @@
 # GNU General Public License for more details.
 #
 # drivers/cmdq
-ccflags-y += -I$(srctree)/drivers/misc/mediatek/cmdq/v3 \
+ccflags-y += -I$(srctree)/$(src)/.. \
+             -I$(srctree)/drivers/misc/mediatek/cmdq/v3 \
              -I$(srctree)/drivers/misc/mediatek/cmdq/v3/inc/cmdq_sec_dr/ \
              -I$(srctree)/drivers/misc/mediatek/smi/ \
              -I$(srctree)/drivers/misc/mediatek/m4u/$(MTK_PLATFORM) \

@@ -94,7 +94,7 @@ make[1]: *** [scripts/Makefile.build:637: drivers/tee] Error 2
 In file included from ./drivers/misc/mediatek/cmdq/v3/cmdq_helper_ext.h:14:0,
                  from ./drivers/misc/mediatek/cmdq/v3/cmdq_reg.h:12,
                  from drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.c:5:
-./drivers/misc/mediatek/cmdq/v3/cmdq_def.h:21:25: fatal error: cmdq_engine.h: No such file or directory
+./drivers/misc/mediatek/cmdq/v3/mt6765/../cmdq_def.h:21:25: fatal error: cmdq_engine.h: No such file or directory
  #include "cmdq_engine.h"
                          ^
 compilation terminated.
