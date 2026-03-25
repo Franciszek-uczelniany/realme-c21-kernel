@@ -73,27 +73,114 @@ jobs:
           ln -sf $(which ccache) ~/.ccache/bin/aarch64-linux-android-g++
           echo "$HOME/.ccache/bin:$PATH" >> $GITHUB_PATH
 
+      # Debug kernel source structure
+      - name: Debug kernel source
+        run: |
+          echo "=== Current directory ==="
+          pwd
+          echo ""
+          echo "=== Files in root directory ==="
+          ls -la
+          echo ""
+          echo "=== Looking for Makefile ==="
+          if [ -f "Makefile" ]; then
+            echo "✅ Makefile found in root"
+            echo "Kernel version info:"
+            head -10 Makefile | grep -E "VERSION|PATCHLEVEL|SUBLEVEL|NAME" || true
+          else
+            echo "❌ Makefile NOT found in root"
+            echo "Searching for Makefile in subdirectories..."
+            find . -name "Makefile" -type f -maxdepth 3 | head -10
+          fi
+          echo ""
+          echo "=== Looking for defconfig files ==="
+          find . -name "*defconfig" -type f | head -20
+          echo ""
+          echo "=== Checking arch/arm64/configs/ ==="
+          if [ -d "arch/arm64/configs" ]; then
+            echo "Files in arch/arm64/configs/:"
+            ls -la arch/arm64/configs/ | grep -E "oppo|defconfig" | head -20
+          else
+            echo "arch/arm64/configs/ directory not found"
+            echo "Searching for oppo defconfigs..."
+            find . -name "oppo*defconfig" -type f | head -10
+          fi
+
       # Build kernel
       - name: Build kernel
         run: |
+          set -e
           export KBUILD_BUILD_USER="snowluna"
           export KBUILD_BUILD_HOST="android-build"
 
+          echo "=== Starting kernel build process ==="
+          
+          # Check if kernel source is in a subdirectory
+          if [ -d "kernel" ] && [ -f "kernel/Makefile" ]; then
+            echo "Found kernel source in 'kernel/' directory"
+            cd kernel
+          elif [ -f "Makefile" ]; then
+            echo "Using current directory as kernel source"
+          else
+            echo "ERROR: Cannot find kernel Makefile!"
+            exit 1
+          fi
+          
+          echo "Current kernel source directory: $(pwd)"
+          
+          # Find the defconfig file
+          DEFCONFIG_PATH=""
+          if [ -f "arch/arm64/configs/oppo6765_defconfig" ]; then
+            DEFCONFIG_PATH="arch/arm64/configs/oppo6765_defconfig"
+            DEFCONFIG_NAME="oppo6765_defconfig"
+          else
+            # Search for oppo6765_defconfig anywhere
+            DEFCONFIG_PATH=$(find . -name "oppo6765_defconfig" -type f | head -1)
+            if [ -n "$DEFCONFIG_PATH" ]; then
+              DEFCONFIG_NAME=$(basename "$DEFCONFIG_PATH")
+              DEFCONFIG_DIR=$(dirname "$DEFCONFIG_PATH")
+              echo "Found defconfig at: $DEFCONFIG_PATH"
+            else
+              echo "ERROR: oppo6765_defconfig not found!"
+              echo "Available defconfigs:"
+              find . -name "*defconfig" -type f | head -20
+              exit 1
+            fi
+          fi
+          
+          echo "Using defconfig: $DEFCONFIG_NAME"
+          
+          # Create output directory
           mkdir -p out
-
-          # Enter kernel source directory
-          cd kernel
-
+          
           # Load device defconfig
-          make O=../out ARCH=arm64 oppo6765_defconfig
-
+          echo "=== Loading defconfig ==="
+          make O=out ARCH=arm64 $DEFCONFIG_NAME
+          
           # Build kernel
+          echo "=== Building kernel with $(nproc --all) cores ==="
           make -j$(nproc --all) \
             ARCH=arm64 \
-            O=../out \
+            O=out \
             CC=clang \
             CROSS_COMPILE="$GITHUB_WORKSPACE/gcc-4.9/bin/aarch64-linux-android-" \
             CLANG_TRIPLE=aarch64-linux-gnu-
+          
+          echo "=== Build completed successfully ==="
+          
+          # Verify kernel image was created
+          if [ -f "out/arch/arm64/boot/Image.gz-dtb" ]; then
+            echo "✅ Kernel image created: out/arch/arm64/boot/Image.gz-dtb"
+            ls -lh out/arch/arm64/boot/Image.gz-dtb
+          elif [ -f "out/arch/arm64/boot/Image.gz" ]; then
+            echo "✅ Kernel image created: out/arch/arm64/boot/Image.gz"
+            ls -lh out/arch/arm64/boot/Image.gz
+          else
+            echo "⚠️ Warning: Standard kernel image not found!"
+            echo "Looking for any kernel images:"
+            find out -name "Image*" -type f 2>/dev/null || echo "No kernel images found"
+            exit 1
+          fi
 
       # Show ccache stats
       - name: Show ccache stats
@@ -102,13 +189,52 @@ jobs:
       # Prepare flashable files
       - name: Prepare flashable files
         run: |
+          set -e
+          echo "=== Preparing flashable files ==="
+          
+          # Determine kernel source location for version extraction
+          if [ -d "kernel" ] && [ -f "kernel/Makefile" ]; then
+            KERNEL_DIR="kernel"
+          else
+            KERNEL_DIR="."
+          fi
+          
           mkdir -p artifact
-          cp out/arch/arm64/boot/Image.gz-dtb artifact/
-          git clone https://github.com/NyxNoirXD/AnyKernel3.git ak
+          
+          # Copy kernel image
+          if [ -f "out/arch/arm64/boot/Image.gz-dtb" ]; then
+            cp out/arch/arm64/boot/Image.gz-dtb artifact/
+            echo "✅ Copied Image.gz-dtb"
+          elif [ -f "out/arch/arm64/boot/Image.gz" ]; then
+            cp out/arch/arm64/boot/Image.gz artifact/
+            echo "✅ Copied Image.gz"
+          else
+            echo "❌ No kernel image found to copy!"
+            exit 1
+          fi
+          
+          # Clone AnyKernel3
+          echo "Cloning AnyKernel3..."
+          git clone --depth=1 https://github.com/NyxNoirXD/AnyKernel3.git ak
+          
+          # Copy AnyKernel3 files
           cp -r ak/* artifact/
+          echo "✅ Copied AnyKernel3 files"
+          
+          # Extract kernel version
+          cd $KERNEL_DIR
           KVER=$(awk '/^VERSION =/ {v=$3} /^PATCHLEVEL =/ {p=$3} /^SUBLEVEL =/ {s=$3} END {print v"."p"."s}' Makefile)
+          cd $GITHUB_WORKSPACE
+          
           echo "KVER=$KVER" >> $GITHUB_ENV
           echo "Kernel version: $KVER"
+          
+          # Create zip file name info
+          echo "Flashable zip will be: lunacore-$KVER.zip"
+          
+          # List artifact contents
+          echo "=== Artifact contents ==="
+          ls -la artifact/
 
       # Upload artifact
       - name: Upload flashable artifact
