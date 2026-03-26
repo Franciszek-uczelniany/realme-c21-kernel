@@ -5,27 +5,24 @@ on:
     branches:
       - master
   pull_request:
-  workflow_dispatch: # Allows manual run
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the kernel source
       - name: Checkout kernel source
         uses: actions/checkout@v4
         with:
           submodules: true
 
-      # Install build dependencies
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y bc bison build-essential ccache curl flex git \
             libncurses-dev libssl-dev lld llvm make python3 unzip wget xz-utils zip
 
-      # Cache ccache
       - name: Cache ccache
         uses: actions/cache@v4
         with:
@@ -34,36 +31,28 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-ccache-
 
-      # Download Clang (recommended for Android kernel)
+      - name: Download GCC 4.9
+        run: |
+          git clone --depth=1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android11-release gcc-4.9
+
       - name: Download Clang
         run: |
-          git clone --depth=1 https://github.com/picasso09/clang-9.0.3-r353983c1 clang
+          wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/android10-dev/clang-r353983c.tar.gz -O clang.tar.gz
+          mkdir clang && tar -xf clang.tar.gz -C clang
 
-      # Setup toolchain PATH
       - name: Setup toolchain PATH
         run: |
-          echo "$GITHUB_WORKSPACE/clang/bin:/usr/bin:/bin" >> $GITHUB_PATH
+          echo "$GITHUB_WORKSPACE/clang/bin:$GITHUB_WORKSPACE/gcc-4.9/bin:/usr/bin:/bin" >> $GITHUB_PATH
 
-      # Setup ccache
       - name: Setup ccache
         run: |
           mkdir -p ~/.ccache/bin
           ln -sf $(which ccache) ~/.ccache/bin/clang
           ln -sf $(which ccache) ~/.ccache/bin/clang++
+          ln -sf $(which ccache) ~/.ccache/bin/aarch64-linux-android-gcc
+          ln -sf $(which ccache) ~/.ccache/bin/aarch64-linux-android-g++
           echo "$HOME/.ccache/bin:$PATH" >> $GITHUB_PATH
 
-      # Debug repository
-      - name: Debug repository structure
-        run: |
-          echo "Current directory: $(pwd)"
-          ls -la
-          echo "Checking for kernel directory..."
-          if [ ! -d "kernel" ]; then
-            echo "❌ kernel/ directory not found!"
-            exit 1
-          fi
-
-      # Build kernel
       - name: Build kernel
         run: |
           set -e
@@ -71,61 +60,57 @@ jobs:
           export KBUILD_BUILD_HOST="android-build"
 
           cd kernel
-
-          # Verify defconfig
-          if [ ! -f "arch/arm64/configs/oppo6765_defconfig" ]; then
-            echo "❌ oppo6765_defconfig not found!"
-            find arch/arm64/configs -name "*defconfig"
-            exit 1
-          fi
-
+          
           mkdir -p out
-
-          echo "=== Loading device defconfig ==="
+          
+          # Load defconfig
           make O=out ARCH=arm64 oppo6765_defconfig
-
-          echo "=== Building kernel ==="
+          
+          # Disable tracing to fix undefined references
+          echo "=== Disabling tracepoints to fix build errors ==="
+          scripts/config --file out/.config \
+            --disable CONFIG_TRACING \
+            --disable CONFIG_FTRACE \
+            --disable CONFIG_TRACEPOINTS \
+            --disable CONFIG_EVENT_TRACING \
+            --disable CONFIG_HAVE_SYSCALL_TRACEPOINTS
+          
+          # Regenerate config
+          make O=out ARCH=arm64 olddefconfig
+          
+          # Build kernel
           make -j$(nproc --all) \
             ARCH=arm64 \
             O=out \
-            CC="ccache clang" \
-            HOSTCC="ccache clang" \
-            CROSS_COMPILE=aarch64-linux-gnu- \
-            CROSS_COMPILE_ARM32=arm-linux-gnueabi-
-
-          echo "=== Kernel build completed ==="
-          ls -lh out/arch/arm64/boot/
-
-      # Show ccache stats
-      - name: Show ccache stats
-        run: ccache -s || true
-
-      # Prepare flashable files
-      - name: Prepare flashable artifact
-        run: |
-          set -e
-          mkdir -p artifact
-          cd kernel
-
+            CC=clang \
+            CROSS_COMPILE="$GITHUB_WORKSPACE/gcc-4.9/bin/aarch64-linux-android-" \
+            CLANG_TRIPLE=aarch64-linux-gnu-
+          
           if [ -f "out/arch/arm64/boot/Image.gz-dtb" ]; then
-            cp out/arch/arm64/boot/Image.gz-dtb ../artifact/
-          elif [ -f "out/arch/arm64/boot/Image.gz" ]; then
-            cp out/arch/arm64/boot/Image.gz ../artifact/
+            echo "✅ Build successful!"
           else
-            echo "❌ Kernel image not found!"
+            echo "❌ Build failed - kernel image not created"
             exit 1
           fi
 
-          # Extract kernel version
-          KVER=$(awk '/^VERSION =/ {v=$3} /^PATCHLEVEL =/ {p=$3} /^SUBLEVEL =/ {s=$3} END {print v"."p"."s}' Makefile)
-          cd ..
-          echo "KVER=$KVER" >> $GITHUB_ENV
+      - name: Show ccache stats
+        run: ccache -s || true
 
-          # Clone AnyKernel3
+      - name: Prepare flashable files
+        run: |
+          set -e
+          mkdir -p artifact
+          cp kernel/out/arch/arm64/boot/Image.gz-dtb artifact/
+          
+          cd kernel
+          KVER=$(awk '/^VERSION =/ {v=$3} /^PATCHLEVEL =/ {p=$3} /^SUBLEVEL =/ {s=$3} END {print v"."p"."s}' Makefile)
+          cd $GITHUB_WORKSPACE
+          
+          echo "KVER=$KVER" >> $GITHUB_ENV
+          
           git clone --depth=1 https://github.com/NyxNoirXD/AnyKernel3.git ak
           cp -r ak/* artifact/
 
-      # Upload artifact
       - name: Upload flashable artifact
         uses: actions/upload-artifact@v4
         with:
