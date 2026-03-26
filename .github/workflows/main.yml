@@ -1,0 +1,125 @@
+name: Kernel Build 4.19
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout kernel source
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bc bison build-essential ccache curl flex git \
+            libncurses-dev libssl-dev lld llvm make python3 unzip wget xz-utils zip
+
+      - name: Cache ccache
+        uses: actions/cache@v4
+        with:
+          path: ~/.ccache
+          key: ${{ runner.os }}-ccache-${{ github.ref_name }}
+          restore-keys: |
+            ${{ runner.os }}-ccache-
+
+      - name: Download GCC 4.9
+        run: |
+          git clone --depth=1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android11-release gcc-4.9
+
+      - name: Download Clang
+        run: |
+          wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/android10-dev/clang-r353983c.tar.gz -O clang.tar.gz
+          mkdir clang && tar -xf clang.tar.gz -C clang
+
+      - name: Setup toolchain PATH
+        run: |
+          echo "$GITHUB_WORKSPACE/clang/bin:$GITHUB_WORKSPACE/gcc-4.9/bin:/usr/bin:/bin" >> $GITHUB_PATH
+
+      - name: Setup ccache
+        run: |
+          mkdir -p ~/.ccache/bin
+          ln -sf $(which ccache) ~/.ccache/bin/clang
+          ln -sf $(which ccache) ~/.ccache/bin/clang++
+          ln -sf $(which ccache) ~/.ccache/bin/aarch64-linux-android-gcc
+          ln -sf $(which ccache) ~/.ccache/bin/aarch64-linux-android-g++
+          echo "$HOME/.ccache/bin:$PATH" >> $GITHUB_PATH
+
+      - name: Build kernel
+        run: |
+          set -e
+          export KBUILD_BUILD_USER="snowluna"
+          export KBUILD_BUILD_HOST="android-build"
+
+          cd kernel
+
+          rm -rf out/
+          mkdir -p out
+
+
+          # Clean
+          make clean
+          make mrproper
+          
+          # Load defconfig
+          make O=out ARCH=arm64 oppo6765_defconfig
+          
+          # Disable tracing to fix undefined references
+          #echo "=== Disabling tracepoints to fix build errors ==="
+          #scripts/config --file out/.config \
+          #  --disable CONFIG_TRACING \
+          #  --disable CONFIG_FTRACE \
+          #  --disable CONFIG_TRACEPOINTS \
+          #  --disable CONFIG_EVENT_TRACING \
+          #  --disable CONFIG_HAVE_SYSCALL_TRACEPOINTS
+          
+          # Regenerate config
+          make O=out ARCH=arm64 olddefconfig
+
+          
+          # Build kernel
+          make -j$(nproc --all) \
+            ARCH=arm64 \
+            O=out \
+            CC=clang \
+            CROSS_COMPILE="$GITHUB_WORKSPACE/gcc-4.9/bin/aarch64-linux-android-" \
+            CLANG_TRIPLE=aarch64-linux-gnu-
+          
+          if [ -f "out/arch/arm64/boot/Image.gz-dtb" ]; then
+            echo "✅ Build successful!"
+          else
+            echo "❌ Build failed - kernel image not created"
+            exit 1
+          fi
+
+      - name: Show ccache stats
+        run: ccache -s || true
+
+      - name: Prepare flashable files
+        run: |
+          set -e
+          mkdir -p artifact
+          cp kernel/out/arch/arm64/boot/Image.gz-dtb artifact/
+          
+          cd kernel
+          KVER=$(awk '/^VERSION =/ {v=$3} /^PATCHLEVEL =/ {p=$3} /^SUBLEVEL =/ {s=$3} END {print v"."p"."s}' Makefile)
+          cd $GITHUB_WORKSPACE
+          
+          echo "KVER=$KVER" >> $GITHUB_ENV
+          
+          git clone --depth=1 https://github.com/NyxNoirXD/AnyKernel3.git ak
+          cp -r ak/* artifact/
+
+      - name: Upload flashable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lunacore-${{ env.KVER }}
+          path: artifact/*

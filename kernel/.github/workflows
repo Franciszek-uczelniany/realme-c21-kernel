@@ -1,0 +1,227 @@
+name: Kernel Build 4.19
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch: # Allows manual run
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the full kernel source
+      - name: Checkout kernel source
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      # Install build dependencies
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bc bison build-essential ccache curl flex git \
+            libncurses-dev libssl-dev lld llvm make python3 unzip wget xz-utils zip
+
+      # Cache ccache
+      - name: Cache ccache
+        uses: actions/cache@v4
+        with:
+          path: ~/.ccache
+          key: ${{ runner.os }}-ccache-${{ github.ref_name }}
+          restore-keys: |
+            ${{ runner.os }}-ccache-
+
+      # Download GCC 4.9
+      - name: Download GCC 4.9
+        run: |
+          git clone --depth=1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android11-release gcc-4.9
+
+      # Download Clang
+      - name: Download Clang
+        run: |
+          wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/android10-dev/clang-r353983c.tar.gz -O clang.tar.gz
+          mkdir clang && tar -xf clang.tar.gz -C clang
+
+      # Setup toolchain PATH
+      - name: Setup toolchain PATH
+        run: |
+          echo "$GITHUB_WORKSPACE/clang/bin:$GITHUB_WORKSPACE/gcc-4.9/bin:/usr/bin:/bin" >> $GITHUB_PATH
+
+      # Setup ccache
+      - name: Setup ccache
+        run: |
+          mkdir -p ~/.ccache/bin
+          ln -sf $(which ccache) ~/.ccache/bin/clang
+          ln -sf $(which ccache) ~/.ccache/bin/clang++
+          ln -sf $(which ccache) ~/.ccache/bin/aarch64-linux-android-gcc
+          ln -sf $(which ccache) ~/.ccache/bin/aarch64-linux-android-g++
+          echo "$HOME/.ccache/bin:$PATH" >> $GITHUB_PATH
+
+      # Debug: Show repository structure
+      - name: Debug repository structure
+        run: |
+          echo "=== Repository Structure ==="
+          echo "Current directory: $(pwd)"
+          echo ""
+          echo "Files in root:"
+          ls -la
+          echo ""
+          echo "Checking for kernel directory:"
+          if [ -d "kernel" ]; then
+            echo "✅ kernel/ directory exists"
+            echo "Contents of kernel/:"
+            ls -la kernel/ | head -20
+            echo ""
+            echo "Checking for defconfig in kernel/:"
+            find kernel -name "*defconfig" -type f | head -10
+          else
+            echo "❌ kernel/ directory not found!"
+          fi
+          echo ""
+          echo "Checking for vendor directory:"
+          if [ -d "vendor" ]; then
+            echo "✅ vendor/ directory exists"
+          else
+            echo "❌ vendor/ directory not found!"
+          fi
+
+      # Build kernel
+      - name: Build kernel
+        run: |
+          set -e
+          export KBUILD_BUILD_USER="snowluna"
+          export KBUILD_BUILD_HOST="android-build"
+
+          echo "=== Starting kernel build process ==="
+          echo "Current directory before cd: $(pwd)"
+          
+          # Navigate to kernel directory
+          cd kernel
+          
+          echo "Current directory after cd: $(pwd)"
+          echo ""
+          echo "Kernel source contents:"
+          ls -la
+          echo ""
+          
+          # Verify Makefile exists
+          if [ ! -f "Makefile" ]; then
+            echo "ERROR: Makefile not found in kernel directory!"
+            exit 1
+          fi
+          echo "✅ Makefile found"
+          
+          # Verify defconfig exists
+          DEFCONFIG_PATH="arch/arm64/configs/oppo6765_defconfig"
+          if [ ! -f "$DEFCONFIG_PATH" ]; then
+            echo "ERROR: $DEFCONFIG_PATH not found!"
+            echo ""
+            echo "Looking for defconfig files in arch/arm64/configs/:"
+            if [ -d "arch/arm64/configs" ]; then
+              ls -la arch/arm64/configs/ | head -20
+            else
+              echo "arch/arm64/configs/ directory not found!"
+              echo ""
+              echo "Searching for any defconfig files:"
+              find . -name "*defconfig" -type f | head -20
+            fi
+            exit 1
+          fi
+          echo "✅ Found defconfig: $DEFCONFIG_PATH"
+          
+          # Create output directory
+          mkdir -p out
+          
+          # Load device defconfig
+          echo ""
+          echo "=== Loading defconfig ==="
+          make O=out ARCH=arm64 oppo6765_defconfig
+          
+          # Build kernel
+          echo ""
+          echo "=== Building kernel with $(nproc --all) cores ==="
+          make -j$(nproc --all) \
+            ARCH=arm64 \
+            O=out \
+            CC=clang \
+            CROSS_COMPILE="$GITHUB_WORKSPACE/gcc-4.9/bin/aarch64-linux-android-" \
+            CLANG_TRIPLE=aarch64-linux-gnu-
+          
+          echo ""
+          echo "=== Build completed successfully ==="
+          
+          # Verify kernel image was created
+          echo ""
+          echo "=== Checking build output ==="
+          if [ -f "out/arch/arm64/boot/Image.gz-dtb" ]; then
+            echo "✅ Kernel image created: out/arch/arm64/boot/Image.gz-dtb"
+            ls -lh out/arch/arm64/boot/Image.gz-dtb
+          elif [ -f "out/arch/arm64/boot/Image.gz" ]; then
+            echo "✅ Kernel image created: out/arch/arm64/boot/Image.gz"
+            ls -lh out/arch/arm64/boot/Image.gz
+          else
+            echo "❌ Kernel image not created!"
+            echo ""
+            echo "Files in out/arch/arm64/boot/:"
+            ls -la out/arch/arm64/boot/ 2>/dev/null || echo "Directory not found"
+            echo ""
+            echo "Searching for any kernel images:"
+            find out -name "Image*" -type f 2>/dev/null || echo "No kernel images found"
+            exit 1
+          fi
+
+      # Show ccache stats
+      - name: Show ccache stats
+        run: ccache -s || true
+
+      # Prepare flashable files
+      - name: Prepare flashable files
+        run: |
+          set -e
+          echo "=== Preparing flashable files ==="
+          
+          # Create artifact directory
+          mkdir -p artifact
+          
+          # Copy kernel image from kernel/out directory
+          if [ -f "kernel/out/arch/arm64/boot/Image.gz-dtb" ]; then
+            cp kernel/out/arch/arm64/boot/Image.gz-dtb artifact/
+            echo "✅ Copied Image.gz-dtb"
+          elif [ -f "kernel/out/arch/arm64/boot/Image.gz" ]; then
+            cp kernel/out/arch/arm64/boot/Image.gz artifact/
+            echo "✅ Copied Image.gz"
+          else
+            echo "❌ No kernel image found to copy!"
+            exit 1
+          fi
+          
+          # Extract kernel version
+          cd kernel
+          KVER=$(awk '/^VERSION =/ {v=$3} /^PATCHLEVEL =/ {p=$3} /^SUBLEVEL =/ {s=$3} END {print v"."p"."s}' Makefile)
+          cd $GITHUB_WORKSPACE
+          
+          echo "Kernel version: $KVER"
+          echo "KVER=$KVER" >> $GITHUB_ENV
+          
+          # Clone AnyKernel3
+          echo "Cloning AnyKernel3..."
+          git clone --depth=1 https://github.com/NyxNoirXD/AnyKernel3.git ak
+          
+          # Copy AnyKernel3 files
+          cp -r ak/* artifact/
+          echo "✅ Copied AnyKernel3 files"
+          
+          # List artifact contents
+          echo ""
+          echo "=== Artifact contents ==="
+          ls -la artifact/
+
+      # Upload artifact
+      - name: Upload flashable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lunacore-${{ env.KVER }}
+          path: artifact/*
