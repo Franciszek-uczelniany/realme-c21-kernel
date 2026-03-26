@@ -60,23 +60,30 @@ jobs:
           export KBUILD_BUILD_HOST="android-build"
 
           cd kernel
-          
+
+          rm -rf out/
           mkdir -p out
+
+
+          # Clean
+          make clean
+          make mrproper
           
           # Load defconfig
           make O=out ARCH=arm64 oppo6765_defconfig
           
           # Disable tracing to fix undefined references
-          echo "=== Disabling tracepoints to fix build errors ==="
-          scripts/config --file out/.config \
-            --disable CONFIG_TRACING \
-            --disable CONFIG_FTRACE \
-            --disable CONFIG_TRACEPOINTS \
-            --disable CONFIG_EVENT_TRACING \
-            --disable CONFIG_HAVE_SYSCALL_TRACEPOINTS
+          #echo "=== Disabling tracepoints to fix build errors ==="
+          #scripts/config --file out/.config \
+          #  --disable CONFIG_TRACING \
+          #  --disable CONFIG_FTRACE \
+          #  --disable CONFIG_TRACEPOINTS \
+          #  --disable CONFIG_EVENT_TRACING \
+          #  --disable CONFIG_HAVE_SYSCALL_TRACEPOINTS
           
           # Regenerate config
           make O=out ARCH=arm64 olddefconfig
+
           
           # Build kernel
           make -j$(nproc --all) \
