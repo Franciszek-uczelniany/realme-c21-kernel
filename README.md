@@ -20,6 +20,11 @@ git clone --depth=1 https://android.googlesource.com/platform/prebuilts/gcc/linu
 wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/android10-dev/clang-r353983c.tar.gz -O clang.tar.gz
 mkdir clang && tar -xf clang.tar.gz -C clang
 export PATH=$(pwd)/gcc-4.9/bin:$(pwd)/clang/bin:$PATH
+
+
+# Make symlink if 'python' doesn't exist, point to python3
+# By default this file doesn't exist
+ test ! -a /usr/bin/python && sudo ln -s /usr/bin/python3 /usr/bin/python
 ````
 
 
