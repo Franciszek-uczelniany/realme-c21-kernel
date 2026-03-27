@@ -36,12 +36,12 @@ export PATH=$(pwd)/gcc-4.9/bin:$(pwd)/clang/bin:$PATH
 
 ````
 cd kernel; mkdir -p out
-make mrproper
+make O=out mrproper
 make O=out ARCH=arm64 oppo6765_defconfig
 make O=out ARCH=arm64 olddefconfig
 # Disable things that doesn't compile
 scripts/config  --file out/.config --disable CONFIG_CFG80211
-scripts/config  --file out/.config--disable CONFIG_MAC80211
+scripts/config  --file out/.config --disable CONFIG_MAC80211
 
 echo "=== Disabling tracepoints to fix build errors ==="
 scripts/config --file out/.config \
