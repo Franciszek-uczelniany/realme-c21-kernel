@@ -51,7 +51,7 @@ scripts/config --file out/.config \
 --disable CONFIG_EVENT_TRACING \
 --disable CONFIG_HAVE_SYSCALL_TRACEPOINTS
 
-make -j$(nproc --all) ARCH=arm64 O=out CC=clang CROSS_COMPILE="aarch64-linux-android-" CLANG_TRIPLE=aarch64-linux-gnu-
+make -j$(nproc --all) ARCH=arm64 O=out CC=clang CROSS_COMPILE="aarch64-linux-android-" CLANG_TRIPLE=aarch64-linux-android-
 ````
 
 
