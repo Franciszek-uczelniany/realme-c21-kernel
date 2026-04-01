@@ -1,1 +1,0 @@
-cmd_drivers/staging/android/oppo_ion/built-in.a :=  rm -f drivers/staging/android/oppo_ion/built-in.a; /home/318074/realme-c21-build/gcc-linaro-6.2.1-2016.11-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-ar rcSTPD drivers/staging/android/oppo_ion/built-in.a drivers/staging/android/oppo_ion/oppo_ion.o

@@ -104,8 +104,6 @@ enum mt6358_irq_numbers {
 	MT6358_IRQ_NR,
 };
 
-
-
 #define MT6358_IRQ_BUCK_BASE MT6358_IRQ_VPROC11_OC
 #define MT6358_IRQ_LDO_BASE MT6358_IRQ_VFE28_OC
 #define MT6358_IRQ_PSC_BASE MT6358_IRQ_PWRKEY
@@ -136,7 +134,6 @@ enum mt6358_irq_numbers {
 	.sta_reg_shift = 0x2,	\
 	.top_offset = MT6358_##sp##_TOP,	\
 }
-
 
 #define MT6358_IRQ_NAME_GEN()	\
 {	\
@@ -222,7 +219,5 @@ enum mt6358_irq_numbers {
 	[MT6358_IRQ_ACCDET_EINT1] = {.name = "accdet_eint1"},	\
 	[MT6358_IRQ_SPI_CMD_ALERT] = {.name = "spi_cmd_alert"},	\
 }
-
-
 
 #endif /* __MFD_MT6358_CORE_H__ */

@@ -1,1 +1,0 @@
-cmd_kernel/keventupload/built-in.a :=  rm -f kernel/keventupload/built-in.a; /home/318074/realme-c21-build/gcc-linaro-6.2.1-2016.11-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-ar rcSTPD kernel/keventupload/built-in.a kernel/keventupload/oplus_kevent_upload.o

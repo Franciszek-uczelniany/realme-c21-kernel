@@ -30,7 +30,7 @@ int blk_crypto_start_using_mode(enum blk_crypto_mode_num crypto_mode,
 int blk_crypto_evict_key(struct request_queue *q,
 			 const struct blk_crypto_key *key);
 
-void blk_crypto_flock(struct keyslot_manager *ksm, unsigned int flags);
+inline void blk_crypto_flock(struct keyslot_manager *ksm, unsigned int flags);
 
 
 #else /* CONFIG_BLK_INLINE_ENCRYPTION */
@@ -45,7 +45,7 @@ static inline bool blk_crypto_endio(struct bio *bio)
 	return true;
 }
 
-void blk_crypto_flock(struct keyslot_manager *ksm,
+static inline void blk_crypto_flock(struct keyslot_manager *ksm,
 				unsigned int flags) {}
 
 #endif /* CONFIG_BLK_INLINE_ENCRYPTION */

@@ -1,0 +1,6 @@
+cd
+export PATH=$(pwd)/gcc-4.9/bin:$(pwd)/clang/bin:$PATH
+
+make -j$(nproc --all) ARCH=arm64 O=out CC=clang CROSS_COMPILE="aarch64-linux-android-" CLANG_TRIPLE=aarch64-linux-gnu-
+
+to jest moja komenda do kompilacji, czy sie uda nie wiem

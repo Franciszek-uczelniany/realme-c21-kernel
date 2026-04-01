@@ -1,0 +1,238 @@
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_HANS_FREEZE
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MMC_DRIVER
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_UFS_DRIVER
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_UFS_SHOW_LATENCY
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_AOD
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_DC
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_ENABLE_MODEM_DB
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_ENGINEERTOOLS
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_FACERECOGNITION
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_FASTBOOT_UNLOCK_VERIFY
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_FG_IO_OPT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_FINGERPRINT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_HEALTHINFO
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_TASK_CPUSTATS
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MIPICLKCHANGE
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MULTI_FREEAREA
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MULTI_KSWAPD
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_NFC_CONSOFT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_ONSCREENFINGERPRINT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_OSC
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_PHOENIX
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_AGINGTEST
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_PROCESS_RECLAIM
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_RESET_ROLLBACK_INDEX
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SELINUX_CONTROL_LOG
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SENSOR
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SENSOR_ALGORITHM
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SENSOR_SMEM
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SENSOR_WISELIGHT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_IOMONITOR
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SPEAKER_MUTE
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MM_FEEDBACK
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_TP_BSPFWUPDATE
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_TP_BASIC
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_CHG_BASIC
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_UIFIRST
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_VIRTUAL_RESERVE_MEMORY
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_MEMLEAK_DETECT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_WIFI_LIMMITBGSPEED
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_WIFI_MTUDETECT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_WIFI_RUSUPGRADE
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_WIFI_SLA
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_DATA_EVAL
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_ZRAM_OPT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_EXFAT_SUPPORT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_SDCARDFS_SUPPORT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_BUG_COMPATIBILITY
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_BUG_STABILITY
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_BUG_DEBUG
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_ARCH_INJECT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_ARCH_EXTENDS
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_LOWMEM_DBG
+OplusKernelEnvConfig.mk:108: myfeature is VENDOR_EDIT
+OplusKernelEnvConfig.mk:108: myfeature is COLOROS_EDIT
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_CAMERA_COMMON
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_THEIA
+OplusKernelEnvConfig.mk:108: myfeature is OPLUS_FEATURE_APP_MONITOR
+../drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
+../drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
+../drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
+../drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
+../drivers/tee/Makefile:3: "tee config----- CONFIG_TEE: y"
+../drivers/tee/Makefile:4: "tee config----- CONFIG_TRUSTONIC_TEE_SUPPORT: y"
+../drivers/tee/Makefile:5: "tee config----- CONFIG_TRUSTONIC_TEE_VERSION: "500""
+../drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
+../drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
+../drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
+../drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
+../drivers/tee/gud/Makefile.include:2: "CONFIG_MTK_PLATFORM: "mt6765""
+../drivers/tee/gud/Makefile.include:3: "CONFIG_TRUSTONIC_TEE_VERSION: "500""
+In file included from ../drivers/power/oplus/oplus_gauge.c:7:
+In file included from ../drivers/power/oplus/oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[4]: *** [../scripts/Makefile.build:334: drivers/power/oplus/oplus_gauge.o] Błąd 1
+make[4]: *** Oczekiwanie na niezakończone zadania....
+In file included from ../drivers/power/oplus/oplus_adapter.c:10:
+In file included from ../drivers/power/oplus/oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[4]: *** [../scripts/Makefile.build:334: drivers/power/oplus/oplus_adapter.o] Błąd 1
+In file included from ../drivers/power/oplus/adapter_ic/oplus_stm.c:20:
+In file included from ../drivers/power/oplus/adapter_ic/../oplus_charger.h:41:
+../drivers/power/oplus/adapter_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/adapter_ic/oplus_stm.o] Błąd 1
+make[4]: *** [../scripts/Makefile.build:637: drivers/power/oplus/adapter_ic] Błąd 2
+In file included from ../drivers/power/oplus/oplus_charger.c:60:
+In file included from ../drivers/power/oplus/oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/power/oplus/oplus_vooc.c:9:
+In file included from ../drivers/power/oplus/oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[4]: *** [../scripts/Makefile.build:334: drivers/power/oplus/oplus_charger.o] Błąd 1
+1 error generated.
+make[4]: *** [../scripts/Makefile.build:334: drivers/power/oplus/oplus_vooc.o] Błąd 1
+In file included from ../drivers/power/oplus/gauge_ic/oplus_bq27541.c:52:
+In file included from ../drivers/power/oplus/gauge_ic/../oplus_charger.h:41:
+../drivers/power/oplus/gauge_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/power/oplus/vooc_ic/oplus_op10.c:53:
+In file included from ../drivers/power/oplus/vooc_ic/oplus_vooc_fw.h:49:
+In file included from ../drivers/power/oplus/vooc_ic/../oplus_charger.h:41:
+../drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/power/oplus/vooc_ic/oplus_rt5125.c:49:
+In file included from ../drivers/power/oplus/vooc_ic/oplus_vooc_fw.h:49:
+In file included from ../drivers/power/oplus/vooc_ic/../oplus_charger.h:41:
+../drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/power/oplus/charger_ic/oplus_short_ic.c:50:
+In file included from ../drivers/power/oplus/charger_ic/../oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_short_ic.o] Błąd 1
+make[5]: *** Oczekiwanie na niezakończone zadania....
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/gauge_ic/oplus_bq27541.o] Błąd 1
+make[4]: *** [../scripts/Makefile.build:637: drivers/power/oplus/gauge_ic] Błąd 2
+In file included from ../drivers/power/oplus/oplus_short.c:47:
+In file included from ../drivers/power/oplus/oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/power/oplus/charger_ic/oplus_rt9471.c:33:
+In file included from ../drivers/power/oplus/charger_ic/oplus_rt9471.h:9:
+In file included from ../drivers/power/oplus/charger_ic/../oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[4]: *** [../scripts/Makefile.build:334: drivers/power/oplus/oplus_short.o] Błąd 1
+In file included from ../drivers/power/oplus/vooc_ic/oplus_n76e.c:51:
+In file included from ../drivers/power/oplus/vooc_ic/oplus_vooc_fw.h:49:
+In file included from ../drivers/power/oplus/vooc_ic/../oplus_charger.h:41:
+../drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/power/oplus/vooc_ic/oplus_vooc_fw.c:47:
+In file included from ../drivers/power/oplus/vooc_ic/../oplus_charger.h:41:
+../drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/power/oplus/vooc_ic/oplus_rk826.c:56:
+In file included from ../drivers/power/oplus/vooc_ic/oplus_vooc_fw.h:49:
+In file included from ../drivers/power/oplus/vooc_ic/../oplus_charger.h:41:
+../drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_rt9471.o] Błąd 1
+In file included from ../drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.c:54:
+In file included from ../drivers/power/oplus/charger_ic/../oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/power/oplus/oplus_wireless.c:27:
+In file included from ../drivers/power/oplus/oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/power/oplus/charger_ic/oplus_bq2589x.c:35:
+In file included from ../drivers/power/oplus/charger_ic/../oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[4]: *** [../scripts/Makefile.build:334: drivers/power/oplus/oplus_wireless.o] Błąd 1
+1 error generated.
+In file included from ../drivers/power/oplus/oplus_debug_info.c:18:
+In file included from ../drivers/power/oplus/oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_vooc_fw.o] Błąd 1
+make[5]: *** Oczekiwanie na niezakończone zadania....
+1 error generated.
+make[4]: *** [../scripts/Makefile.build:334: drivers/power/oplus/oplus_debug_info.o] Błąd 1
+1 error generated.
+In file included from ../drivers/power/oplus/vooc_ic/oplus_stm8s.c:52:
+In file included from ../drivers/power/oplus/vooc_ic/oplus_vooc_fw.h:49:
+In file included from ../drivers/power/oplus/vooc_ic/../oplus_charger.h:41:
+../drivers/power/oplus/vooc_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/power/oplus/charger_ic/oplus_bq2591x.c:32:
+In file included from ../drivers/power/oplus/charger_ic/../oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_op10.o] Błąd 1
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_bq2591x.o] Błąd 1
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_battery_mtk6765R.o] Błąd 1
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_bq2589x.o] Błąd 1
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_n76e.o] Błąd 1
+In file included from ../drivers/power/oplus/charger_ic/oplus_bq2560x.c:42:
+In file included from ../drivers/power/oplus/charger_ic/../oplus_charger.h:41:
+../drivers/power/oplus/charger_ic/../charger_ic/oplus_battery_mtk6765R.h:27:10: fatal error: '../../../../../kernel-4.19/drivers/power/supply/charger_class.h' file not found
+#include "../../../../../kernel-4.19/drivers/power/supply/charger_class.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/charger_ic/oplus_bq2560x.o] Błąd 1
+make[4]: *** [../scripts/Makefile.build:637: drivers/power/oplus/charger_ic] Błąd 2
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_rt5125.o] Błąd 1
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_rk826.o] Błąd 1
+1 error generated.
+make[5]: *** [../scripts/Makefile.build:334: drivers/power/oplus/vooc_ic/oplus_stm8s.o] Błąd 1
+make[4]: *** [../scripts/Makefile.build:637: drivers/power/oplus/vooc_ic] Błąd 2
+make[3]: *** [../scripts/Makefile.build:637: drivers/power/oplus] Błąd 2
+make[2]: *** [../scripts/Makefile.build:637: drivers/power] Błąd 2
+make[2]: *** Oczekiwanie na niezakończone zadania....
+make[1]: *** [/home/xxx/OdNowa/kernel/Makefile:1171: drivers] Błąd 2
+make[1]: *** Oczekiwanie na niezakończone zadania....
+make: *** [Makefile:146: sub-make] Błąd 2

@@ -1,1 +1,0 @@
-/home/318074/realme-c21-build/kernel/tools/gpio/../../include/uapi/linux/gpio.h

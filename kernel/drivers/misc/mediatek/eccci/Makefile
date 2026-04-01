@@ -21,8 +21,6 @@ endif
 
 ifneq ($(CCCI_OBJ), n)
 
-ccflags-y += -I$(srctree)/$(src)
-ccflags-y += -I$(srctree)/$(src)/$(MTK_PLATFORM)
 $(info CONFIG_MTK_PLATFORM := $(subst ",,$(CONFIG_MTK_PLATFORM)))
 $(info CONFIG_MTK_PLATFORM := $(CONFIG_MTK_PLATFORM))
 $(info MTK_PLATFORM := $(MTK_PLATFORM))

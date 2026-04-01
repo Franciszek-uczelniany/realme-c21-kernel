@@ -13,7 +13,6 @@
 
 # common driver code for CMDQ
 
-ccflags-y += -I$(srctree)/$(src)
 MTK_PLATFORM := $(subst ",,$(CONFIG_MTK_PLATFORM))
 
 ccflags-$(CONFIG_MACH_MT6768) += -DCMDQ_MDP_ENABLE_SPR
@@ -55,7 +54,6 @@ MDP_PLATFORM_DIR=$(srctree)/drivers/misc/mediatek/cmdq/v3/$(MTK_PLATFORM)
 platformdir_exists=$(shell if [ -d ${MDP_PLATFORM_DIR} ]; then echo "y"; else echo "n"; fi;)
 ifeq ($(platformdir_exists), y)
 ccflags-y += -I$(MDP_PLATFORM_DIR)/
-ccflags-y += -I$(srctree)/$(src)/$(MTK_PLATFORM)/
 else
 ccflags-y += -DCMDQ_COMMON_ENG_SUPPORT
 endif

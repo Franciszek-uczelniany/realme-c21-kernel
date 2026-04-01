@@ -1274,7 +1274,7 @@ static struct kobj_attribute wakeup_stastisc_reset = __ATTR(
 
 /*---------------------------------- sysfs: kernel_time ---------------------------------------------*/
 
-extern bool ws_all_release(void);
+extern inline bool ws_all_release(void);
 struct ws_time_statistics {
 	ktime_t start;
 	ktime_t end;

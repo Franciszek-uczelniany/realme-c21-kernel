@@ -122,8 +122,6 @@
 
 
 /*irq name define in kernel-x.xx/include/linux/mfd/mt6358/core.h -> mt6358_irq_numbers*/
-
-
 static const char *pmic_irq_name[82]={
 	[0] =  "MT6358_IRQ_VPROC11_OC"		,
 	[1] =  "MT6358_IRQ_VPROC12_OC"		,
@@ -209,7 +207,6 @@ static const char *pmic_irq_name[82]={
 	[81] =  "MT6358_IRQ_NR"				,
 
 };
-
 /*irq name define in kernel-x.xx/include/linux/mfd/mt6358/core.h -> mt6358_irq_numbers*/
 
 #else

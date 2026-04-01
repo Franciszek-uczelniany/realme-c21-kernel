@@ -29,7 +29,6 @@ obj-$(CONFIG_INPUT_MISC)	+= misc/
 obj-$(CONFIG_INPUT_APMPOWER)	+= apm-power.o
 #ifdef VENDOR_EDIT
 #obj-$(CONFIG_MTK_FINGERPRINT_SUPPORT)  += fingerprint/
-#nie ma tego
 obj-$(CONFIG_OPPO_FINGERPRINT)  += oppo_fp_drivers/
 obj-$(CONFIG_OPPO_FINGERPRINT)  += oppo_secure_common/
 #endif /*VENDOR_EDIT*/

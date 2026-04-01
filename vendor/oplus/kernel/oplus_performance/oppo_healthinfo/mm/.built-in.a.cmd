@@ -1,1 +1,0 @@
-cmd_mm/oppo_healthinfo/built-in.a :=  rm -f mm/oppo_healthinfo/built-in.a; /home/318074/realme-c21-build/gcc-linaro-6.2.1-2016.11-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-ar rcSTPD mm/oppo_healthinfo/built-in.a mm/oppo_healthinfo/memory_monitor.o

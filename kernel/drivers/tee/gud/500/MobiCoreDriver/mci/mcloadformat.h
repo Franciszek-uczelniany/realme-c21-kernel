@@ -17,7 +17,7 @@
 #define MCLOADFORMAT_H_
 
 #include <linux/uaccess.h>	/* u32 and friends */
-#include "../public/mc_user.h"	/* struct mc_uuid_t */
+#include "public/mc_user.h"	/* struct mc_uuid_t */
 
 #define MAX_SO_CONT_SIZE	512		/* Max size for a container */
 

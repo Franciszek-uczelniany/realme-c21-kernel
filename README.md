@@ -39,64 +39,8 @@ cd kernel; mkdir -p out
 make O=out mrproper
 make O=out ARCH=arm64 oppo6765_defconfig
 make O=out ARCH=arm64 olddefconfig
-# Disable things that doesn't compile
-scripts/config  --file out/.config --disable CONFIG_CFG80211
-scripts/config  --file out/.config --disable CONFIG_MAC80211
 
-echo "=== Disabling tracepoints to fix build errors ==="
-scripts/config --file out/.config \
---disable CONFIG_TRACING \
---disable CONFIG_FTRACE \
---disable CONFIG_TRACEPOINTS \
---disable CONFIG_EVENT_TRACING \
---disable CONFIG_HAVE_SYSCALL_TRACEPOINTS
-
-make -j$(nproc --all) ARCH=arm64 O=out CC=clang CROSS_COMPILE="aarch64-linux-android-" CLANG_TRIPLE=aarch64-linux-android-
+make -j$(nproc --all) ARCH=arm64 O=out CC=clang CROSS_COMPILE="aarch64-linux-android-" CLANG_TRIPLE=aarch64-linux-gnu-
 ````
-
-
-#### Bugs
-
-There is a problem linking the mac80211 module, it is most likely due to the use of incorrect header versions (from linux 4.9 vs linux 4.19). Here is a fragment of the log:
-
-
-````
-
-
-linux/compiler.h:193: undefined reference to `\_\_tracepoint\_cfg80211\_rx\_unexpected\_4addr\_frame'
-
-realme-c21-kernel/gcc-4.9/bin/aarch64-linux-android-ld: net/wireless/nl80211.o: relocation R\_AARCH64\_ADR\_PREL\_PG\_HI21 against external symbol `\_\_tracepoint\_cfg80211\_rx\_unexpected\_4addr\_frame' can not be used when making a shared object; recompile with -fPIC
-
-realme-c21-kernel/kernel/out/../include/linux/compiler.h:193: undefined reference to `\_\_tracepoint\_cfg80211\_rx\_unexpected\_4addr\_frame'
-
-realme-c21-kernel/kernel/out/../include/linux/compiler.h:193: undefined reference to `\_\_tracepoint\_cfg80211\_rx\_unexpected\_4addr\_frame'
-
-realme-c21-kernel/gcc-4.9/bin/aarch64-linux-android-ld: net/wireless/nl80211.o: relocation R\_AARCH64\_ADR\_PREL\_PG\_HI21 against external symbol `\_\_tracepoint\_cfg80211\_rx\_unexpected\_4addr\_frame' can not be used when making a shared object; recompile with -fPIC
-
-realme-c21-kernel/kernel/out/../include/linux/compiler.h:193: undefined reference to `\_\_tracepoint\_cfg80211\_rx\_unexpected\_4addr\_frame'
-
-realme-c21-kernel/kernel/out/../include/linux/compiler.h:193: undefined reference to `\_\_tracepoint\_cfg80211\_return\_bool'
-
-realme-c21-kernel/gcc-4.9/bin/aarch64-linux-android-ld: net/wireless/nl80211.o: relocation R\_AARCH64\_ADR\_PREL\_PG\_HI21 against external symbol `\_\_tracepoint\_cfg80211\_return\_bool' can not be used when making a shared object; recompile with -fPIC
-
-realme-c21-kernel/kernel/out/../include/linux/compiler.h:193: undefined reference to `\_\_tracepoint\_cfg80211\_return\_bool'
-
-realme-c21-kernel/kernel/out/../include/linux/compiler.h:193: undefined reference to `\_\_tracepoint\_cfg80211\_return\_bool'
-
-realme-c21-kernel/gcc-4.9/bin/aarch64-linux-android-ld: net/wireless/nl80211.o: relocation R\_AARCH64\_ADR\_PREL\_PG\_HI21 against external symbol `\_\_tracepoint\_cfg80211\_return\_bool' can not be used when making a shared object; recompile with -fPIC
-
-realme-c21-kernel/kernel/out/../include/linux/compiler.h:193: undefined reference to `\_\_tracepoint\_cfg80211\_return\_bool'
-
-realme-c21-kernel/kernel/out/../include/linux/compiler.h:193: undefined reference to `\_\_tracepoint\_cfg80211\_return\_bool'
-
-realme-c21-kernel/gcc-4.9/bin/aarch64-linux-android-ld: net/wireless/nl80211.o: relocation R\_AARCH64\_ADR\_PREL\_PG\_HI21 against external symbol `\_\_tracepoint\_cfg80211\_return\_bool' can not be used when making a shared object; recompile with -fPIC
-
-net/wireless/nl80211.o:realme-c21-kernel/kernel/out/../include/linux/compiler.h:193: more undefined references to `\_\_tracepoint\_cfg80211\_return\_bool' follow
-
-realme-c21-kernel/gcc-4.9/bin/aarch64-linux-android-ld: net/wireless/nl80211.o: relocation R\_AARCH64\_ADR\_PREL\_PG\_HI21 against external symbol `\_\_tracepoint\_cfg80211\_return\_bool' can not be used when making a shared object; recompile with -fPIC
-
-net/wireless/nl80211.o: In function `\_\_read\_once\_size':
-````
-
 
 

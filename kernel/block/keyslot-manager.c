@@ -680,7 +680,7 @@ EXPORT_SYMBOL_GPL(keyslot_manager_derive_raw_secret);
  * detection, set another lock sub-class could avoid it.
  *
  */
-void ksm_flock(struct keyslot_manager *ksm, unsigned int flags)
+inline void ksm_flock(struct keyslot_manager *ksm, unsigned int flags)
 {
 	ksm->lock_flags = flags;
 }

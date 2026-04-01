@@ -8,13 +8,10 @@
 #define _OPLUS_CFS_TRACE_H
 
 #include <linux/tracepoint.h>
-//#include "
 
 #undef TRACE_SYSTEM
 #define TRACE_SYSTEM oplus_sched
 #define TRACE_INCLUDE_FILE uifirst_sched_trace
-
-
 
 TRACE_EVENT(oplus_tp_sched_change_ux,
 	TP_PROTO(int chg_ux, int target_cpu),

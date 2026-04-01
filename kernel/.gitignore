@@ -1,10 +1,9 @@
-# SPDX-License-Identifier: GPL-2.0-only
 #
 # NOTE! Don't add files that are generated in specific
 # subdirectories here. Add them in the ".gitignore" file
 # in that subdirectory instead.
 #
-# NOTE! Please use 'git ls-files -i -c --exclude-per-directory=.gitignore'
+# NOTE! Please use 'git ls-files -i --exclude-standard'
 # command after changing this file, to see if there are
 # any tracked files which get ignored after the change.
 #
@@ -16,16 +15,11 @@
 *.bin
 *.bz2
 *.c.[012]*.*
-*.dt.yaml
 *.dtb
-*.dtbo
 *.dtb.S
-*.dtbo.S
 *.dwo
-*.dylib
 *.elf
 *.gcno
-*.gcda
 *.gz
 *.i
 *.ko
@@ -35,16 +29,11 @@
 *.lz4
 *.lzma
 *.lzo
-*.mod
 *.mod.c
 *.o
 *.o.*
+*.order
 *.patch
-*.pyc
-*.rlib
-*.rmeta
-*.rpm
-*.rsi
 *.s
 *.so
 *.so.dbg
@@ -53,34 +42,26 @@
 *.tab.[ch]
 *.tar
 *.xz
-*.zst
 Module.symvers
-dtbs-list
-modules.order
+modules.builtin
 
 #
 # Top-level generic files
 #
+/tags
+/TAGS
 /linux
-/modules-only.symvers
 /vmlinux
 /vmlinux.32
-/vmlinux.map
-/vmlinux.symvers
-/vmlinux.unstripped
 /vmlinux-gdb.py
 /vmlinuz
 /System.map
 /Module.markers
-/modules.builtin
-/modules.builtin.modinfo
-/modules.builtin.ranges
-/modules.nsdeps
 
 #
 # RPM spec file (make rpm-pkg)
 #
-/rpmbuild/
+/*.spec
 
 #
 # Debian directory (make deb-pkg)
@@ -98,32 +79,20 @@ modules.order
 /tar-install/
 
 #
-# pacman files (make pacman-pkg)
+# git files that we don't want to ignore even if they are dot-files
 #
-/PKGBUILD
-/pacman/
-
-#
-# We don't want to ignore the following even if they are dot-files
-#
-!.clang-format
-!.clippy.toml
-!.cocciconfig
-!.editorconfig
-!.get_maintainer.ignore
-!.gitattributes
 !.gitignore
-!.kunitconfig
 !.mailmap
-!.pylintrc
-!.rustfmt.toml
+!.cocciconfig
+!.clang-format
 
 #
 # Generated include files
 #
-/include/config/
-/include/generated/
-/arch/*/include/generated/
+include/config
+include/generated
+include/ksym
+arch/*/include/generated
 
 # stgit generated dirs
 patches-*
@@ -131,11 +100,6 @@ patches-*
 # quilt's files
 patches
 series
-
-# ctags files
-tags
-!tags/
-TAGS
 
 # cscope files
 cscope.*
@@ -150,6 +114,7 @@ GTAGS
 # id-utils files
 ID
 
+*.orig
 *~
 \#*#
 
@@ -163,24 +128,7 @@ signing_key.x509
 x509.genkey
 
 # Kconfig presets
-/all.config
-/alldef.config
-/allmod.config
-/allno.config
-/allrandom.config
-/allyes.config
-
-# Kconfig savedefconfig output
-/defconfig
+all.config
 
 # Kdevelop4
 *.kdev4
-
-# Clang's compilation database file
-compile_commands.json
-
-# Documentation toolchain
-sphinx_*/
-
-# Rust analyzer configuration
-/rust-project.json
