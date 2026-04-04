@@ -93,7 +93,7 @@ jobs:
             CROSS_COMPILE="$GITHUB_WORKSPACE/gcc-4.9/bin/aarch64-linux-android-" \
             CLANG_TRIPLE=aarch64-linux-gnu-
           
-          if [ -f "out/arch/arm64/boot/Image.gz-dtb" ]; then
+          if [ -f "out/arch/arm64/boot/Image.gz" ]; then
             echo "✅ Build successful!"
           else
             echo "❌ Build failed - kernel image not created"
@@ -107,7 +107,7 @@ jobs:
         run: |
           set -e
           mkdir -p artifact
-          cp kernel/out/arch/arm64/boot/Image.gz-dtb artifact/
+          cp kernel/out/arch/arm64/boot/Image.gz artifact/
           
           cd kernel
           KVER=$(awk '/^VERSION =/ {v=$3} /^PATCHLEVEL =/ {p=$3} /^SUBLEVEL =/ {s=$3} END {print v"."p"."s}' Makefile)
@@ -121,5 +121,5 @@ jobs:
       - name: Upload flashable artifact
         uses: actions/upload-artifact@v4
         with:
-          name: lunacore-${{ env.KVER }}
+          name: stock-${{ env.KVER }}
           path: artifact/*
