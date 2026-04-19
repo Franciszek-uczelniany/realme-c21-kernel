@@ -3,7 +3,7 @@
 
 TWRP recovery (lub inny współczesny recovery) jest idealnym środowiskiem do benchmarku i ogólnie mówiąc uruchamiania dystrybucji Linux. Zawiera w sobie wszystkie binarki od producenta i na ogół działa stabilnie. W tym notatniku wyjaśnię jak zainstalować ubuntu na twrp. 
 
-setup_ubuntu_rootfs.md jest notatnikiem, w którym będę bardziej wyjaśniał jak zrobić własny rootfs. Moja instalacja ubuntu jest do pobrania tutaj.
+setup_ubuntu_rootfs.md jest notatnikiem, w którym będę bardziej wyjaśniał jak zrobić własny rootfs. Moja instalacja ubuntu jest do pobrania [tutaj](https://drive.google.com/file/d/1heMCehAZoDS_dTN4GH2TcRQuno63to9P/view?usp=sharing).
 
 Katalogiem, w którym rozpakuję ubuntu rootfs będzie /data/ubuntu. Nie trzeba formatować partycji userdata. Nie wszystkie foldery mają File Based Encryption (FDE). 
 
