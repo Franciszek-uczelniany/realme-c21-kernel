@@ -35,12 +35,13 @@ export PATH=$(pwd)/gcc-4.9/bin:$(pwd)/clang/bin:$PATH
 
 
 ````
+OPTIMIZATION_LVL=0
 cd kernel; mkdir -p out
 make O=out mrproper
 make O=out ARCH=arm64 oppo6765_defconfig
 make O=out ARCH=arm64 olddefconfig
 
-make -j$(nproc --all) ARCH=arm64 O=out CC=clang CROSS_COMPILE="aarch64-linux-android-" CLANG_TRIPLE=aarch64-linux-gnu-
+make KCFLAGS="-O$OPTIMIZATION_LVL" -j$(nproc --all) ARCH=arm64 O=out CC=clang CROSS_COMPILE="aarch64-linux-android-" CLANG_TRIPLE=aarch64-linux-gnu-
 ````
 
 ### Notes
