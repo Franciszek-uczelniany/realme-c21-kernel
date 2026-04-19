@@ -1,6 +1,6 @@
 TWRP recovery (or any other modern recovery) is an ideal environment for benchmarking and generally booting Linux distributions. It includes all the manufacturer's binaries and generally runs stably. In this notebook, I'll explain how to install Ubuntu on TWRP.
 
-setup_ubuntu_rootfs.md is a note that explains in more detail how to create your own rootfs. My Ubuntu installation can be downloaded here.
+setup_ubuntu_rootfs.md is a note that explains in more detail how to create your own rootfs. My Ubuntu installation can be downloaded [here](https://drive.google.com/file/d/1heMCehAZoDS_dTN4GH2TcRQuno63to9P/view?usp=sharing).
 
 The directory where I'll unpack the Ubuntu rootfs will be /data/ubuntu. There's no need to format the userdata partition. Not all folders have File Based Encryption (FDE).
 
